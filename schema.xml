@@ -1,4 +1,4 @@
-  <?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
 <!-- Active URL: http://db.lewagon.com/ -->
 <sql>
@@ -50,6 +50,12 @@
 <row name="last_name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
+<row name="phone_number" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="avatar_photo" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
@@ -81,11 +87,14 @@
 <row name="date" null="1" autoincrement="0">
 <datatype>DATETIME</datatype>
 <default>NULL</default></row>
+<row name="after_photo" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="292" y="345" name="Cars">
+<table x="229" y="378" name="Cars">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -106,6 +115,9 @@
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="brand" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="car_photo" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
