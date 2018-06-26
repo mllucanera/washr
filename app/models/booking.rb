@@ -4,6 +4,4 @@ class Booking < ApplicationRecord
   has_one :client, through: :car, source: :user
 
   validates :car, presence: true
-  validates :washer, presence: true
-
 end
