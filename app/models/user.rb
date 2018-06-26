@@ -6,10 +6,10 @@ class User < ApplicationRecord
   has_many :cars, dependent: :destroy
   has_many :bookings, dependent: :destroy
 
-  validates :role, presence: true
+  validates :role, presence: true, inclusion: { in: %w(washer client) }
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :phone, presence: true
+  validates :phone, presence: true, length: { minimum: 5 }
   validates :photo, presence: true, if: :washer?
 
   def washer?
