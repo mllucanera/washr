@@ -20,15 +20,13 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @booking = Booking.all
+    @bookings = Booking.where(status == 0)
   end
 
   def edit
-
   end
 
   def update
-
   end
 
   private
