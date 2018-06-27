@@ -1,0 +1,24 @@
+<%= simple_form_for [current_user, @car], url: client_cars_path do |f| %>
+  <%= f.error_notification %>
+  <p>
+    <%= f.input :color %>
+  </p>
+  <p>
+    <%= f.input :name %>
+  </p>
+  <p>
+    <%= f.input :model %>
+  </p>
+  <p>
+    <%= f.input :brand %>
+  </p>
+  <p>
+    <%= f.input :plate %>
+  </p>
+  <p>
+    <%= f.input :photo %>
+  </p>
+  <p>
+    <%= f.submit :class => 'btn btn-primary' %>
+  </p>
+<% end %>
