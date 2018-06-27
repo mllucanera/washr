@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   # washer routes
 
   resources :bookings, only: [:show, :index, :update, :edit]
+  put 'bookings/:id/completed', to: "bookings#completed", as: 'completed'
 end
