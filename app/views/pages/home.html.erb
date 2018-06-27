@@ -1,3 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+<%= form_tag root_path, method: :get do %>
+  <%= text_field_tag :address,
+  params[:address],
+  class: "form-control",
+  placeholder: "Enter address"
+  %>
+<% end %>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
+<%= link_to "Confirm Address", new_booking_path(address: params[:address]), class: "btn btn-primary"  %>
