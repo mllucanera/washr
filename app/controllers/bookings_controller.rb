@@ -20,7 +20,14 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.where(status: 0)
+    if current_user.washer?
+      @bookings = Booking.where(status: 0)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def edit
   end
 
   def update
