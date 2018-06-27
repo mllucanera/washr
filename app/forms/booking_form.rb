@@ -8,7 +8,8 @@ class BookingForm
   validates :longitude, presence: true
   validates :latitude, presence: true
 
-  def initialize
+  def initialize(attributes = {})
+    super
     @step = 1
   end
 
