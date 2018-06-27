@@ -1,6 +1,4 @@
 import GMaps from 'gmaps/gmaps.js';
-console.log(mapElement);
-console.log("mapElement");
 
 const mapElement = document.getElementById('map');
 // don't try to build a map if there's no div#map to inject in
@@ -19,12 +17,6 @@ if (markers.length === 1) {
     map.setZoom(15);
      })
   }
-
-
-
-
-// don't try to build a map if there's no div#map to inject in
-
 
 
 const styles = [
