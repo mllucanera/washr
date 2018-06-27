@@ -2,5 +2,11 @@
 <br>
 <p>Car: <%= @booking.car.brand %></p>
 <p> Washer: <%= @booking.washer.first_name %> <%= @booking.washer.last_name %></p>
+
+<% if @booking.washer == nil %>
 <p> Status: <%= @booking.status%></p>
-<%= link_to "pick", edit_booking_path(@booking.id), class: "btn btn-success" %>
+<%= link_to "pick", booking_path(@booking.id), method: :put, data: { confirm: "Are you sure you want to pick this wash?"}, class: "btn btn-success" %>
+<% else %>
+
+<%= link_to "completed", completed_path(@booking.id), method: :put, data: { confirm: "Are you sure you completed the task?"}, class: "btn btn-success" %>
+<% end %>
