@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
 
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_booking, only: [:show, :destroy]
 
   def new
     @booking = Booking.new
@@ -20,13 +20,15 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.where(status == 0)
-  end
-
-  def edit
+    @bookings = Booking.where(status: 0)
   end
 
   def update
+    @booking = Booking.find(params[:id])
+    @booking.washer = current_user
+    @booking.status = 1
+    @booking.save!
+    redirect_to booking_path(@booking.id)
   end
 
   private

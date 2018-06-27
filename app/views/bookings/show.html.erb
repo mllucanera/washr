@@ -1,2 +1,6 @@
 <h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<br>
+<p>Car: <%= @booking.car.brand %></p>
+<p> Washer: <%= @booking.washer.first_name %> <%= @booking.washer.last_name %></p>
+<p> Status: <%= @booking.status%></p>
+<%= link_to "pick", edit_booking_path(@booking.id), class: "btn btn-success" %>
