@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     if params[:address].present?
       address = params[:address]
       pin_address(address)
+    else @markers = 0
     end
   end
 
