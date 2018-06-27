@@ -6,6 +6,6 @@ marcelo = User.create!(role: "washer", first_name: "Marcelo", last_name: "Polli"
 huevo = Car.create!(plate: "ABC123", color: "red", name: "huevo", brand: "mazda", photo: "https://picsum.photos/200/300/?random", user: luli)
 fiteta = Car.create!(plate: "HXS939", color: "black", name: "fiteta", brand: "honda", photo: "https://picsum.photos/200/300/?random", user: joti)
 
-first_booking = Booking.create!(car: fiteta, status: 0, washer: marcelo)
-second_booking = Booking.create!(car: huevo, status: 0, washer: jash)
+first_booking = Booking.create!(car: fiteta, status: 0)
+second_booking = Booking.create!(car: huevo, status: 0)
 
