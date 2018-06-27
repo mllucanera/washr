@@ -1,0 +1,11 @@
+<% @cars.each do |car| %>
+
+<%= car.name %>
+<%= car.color %>
+<%= car.model %>
+<%= car.brand %>
+<%= link_to "View", edit_client_car_path(car), class: "btn-success" %>
+<%= link_to "Edit", edit_client_car_path(car), class: "btn-primary" %>
+<%= link_to "Delete", client_car_path(car), class: "btn-danger" %>
+<% end %>
+<%= link_to "Back", client_cars_path, class: "btn-warning" %>
