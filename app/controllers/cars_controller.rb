@@ -19,7 +19,7 @@ class CarsController < ApplicationController
   end
 
   def index
-    @cars = Car.all
+    @cars = current_user.cars
   end
 
   def edit

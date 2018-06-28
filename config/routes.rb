@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:new, :create]
 
   namespace :client do
+    resources :bookings, only: [:show]
     resources :cars
   end
 
