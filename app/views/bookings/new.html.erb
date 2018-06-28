@@ -1,7 +1,11 @@
-<img src="https://picsum.photos/1300/500" alt="Map">
 
 <%= simple_form_for @booking do |f| %>
-  <%= f.input :car_id, collection: @cars %>
-  <%= f.hidden_field :address, value: @booking.address %>
-  <%= f.button :submit %>
+<%= f.error :car %>
+
+<%= f.input :car_id, collection: @cars %>
+<%= f.hidden_field :address, value: @booking.address %>
+<%= f.button :submit %>
 <% end %>
+
+
+<img src="https://picsum.photos/1300/500" alt="Map">
