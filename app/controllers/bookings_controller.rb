@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
 
-  before_action :set_booking, only: [:show, :destroy]
+  before_action :set_booking, only: [:show, :destroy, :update]
 
   def new
     @booking = Booking.new
@@ -23,10 +23,16 @@ class BookingsController < ApplicationController
   end
 
   def index
-    if current_user.washer?
-      @bookings = Booking.where(status: 0)
-    else
+    @booking = current_user.bookings.last
+    case current_user.role
+    when "client"
       redirect_to root_path
+    when "washer"
+      if current_user.bookings.empty? || washed?
+        @bookings = Booking.where(status: 0)
+      else
+        redirect_to booking_path(@booking.id)
+      end
     end
   end
 
@@ -34,7 +40,6 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking = Booking.find(params[:id])
     @booking.washer = current_user
     @booking.status = 1
     @booking.save!
@@ -43,7 +48,7 @@ class BookingsController < ApplicationController
 
   def completed
     @booking = Booking.find(params[:id])
-    @booking.status = 2
+    @booking.status = 3
     @booking.save!
     redirect_to bookings_path
   end
@@ -59,5 +64,8 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:car_id, :address)
   end
 
-
+ def washed?
+    status = current_user.bookings.last.status
+    status == 2 || status == 3
+  end
 end
