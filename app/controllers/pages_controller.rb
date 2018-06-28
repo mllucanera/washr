@@ -9,6 +9,9 @@ class PagesController < ApplicationController
     end
   end
 
+  def welcome
+  end
+
   def pin_address(address)
     res = Geocoder.search(address)
     @markers =
