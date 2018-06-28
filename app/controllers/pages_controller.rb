@@ -12,12 +12,16 @@ class PagesController < ApplicationController
   private
 
   def client_home
-    current_user.cars.each do |car|
-      if car.bookings.empty? || car.bookings.last.completed?
-        mapper
-      else
-        last_booking_id = car.bookings.last.id
-        redirect_to client_booking_path(last_booking_id)
+    if current_user.cars.empty?
+      mapper
+    else
+      current_user.cars.each do |car|
+        if car.bookings.empty? || car.bookings.last.completed?
+          mapper
+        else
+          last_booking_id = car.bookings.last.id
+          redirect_to client_booking_path(last_booking_id)
+        end
       end
     end
   end
