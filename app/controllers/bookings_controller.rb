@@ -15,7 +15,8 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to client_booking_path(@booking)
     else
-      render new
+      @cars = current_user.cars
+      render 'new'
     end
   end
 
