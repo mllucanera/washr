@@ -56,7 +56,7 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :debug
   # To make file from http to https. Look up - "Bonus - Forcing SSL in Rails"
-  congig.force_ssl = true
+  config.force_ssl = true
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
