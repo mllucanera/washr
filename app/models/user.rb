@@ -7,6 +7,7 @@ class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: [:facebook]
 
   has_many :cars, dependent: :destroy
+  #washer bookings
   has_many :bookings, dependent: :destroy
 
   validates :role, presence: true, inclusion: { in: %w(washer client) }
