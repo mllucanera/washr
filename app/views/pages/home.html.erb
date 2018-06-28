@@ -1,3 +1,6 @@
+<%= link_to "Confirm Address", new_booking_path(address: params[:address]), class: "btn btn-primary"  %>
+
+
 <%= form_tag root_path, method: :get do %>
   <%= text_field_tag :address,
   params[:address],
@@ -13,4 +16,3 @@
   data-markers="<%= @markers.to_json %>"
 ></div>
 
-<%= link_to "Confirm Address", new_booking_path(address: params[:address]), class: "btn btn-primary"  %>

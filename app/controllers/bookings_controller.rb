@@ -4,19 +4,16 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    if Car.all.empty?
-
-    else
-
-    end
+    @booking.address = params[:address]
+    @cars = current_user.cars
   end
+
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.address = address
-    @booking.user = current_user
+    @booking.status = 0
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to client_booking_path(@booking)
     else
       render new
     end
@@ -59,7 +56,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require[:booking].permit[:car, :address]
+    params.require(:booking).permit(:car_id, :address)
   end
 
 
