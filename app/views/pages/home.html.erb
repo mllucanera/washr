@@ -1,5 +1,5 @@
 <%= link_to "Confirm Address", new_booking_path(address: params[:address]), class: "btn btn-primary"  %>
-
+<button id="sweet-alert-demo" class="btn btn-primary">Click me!</button>
 
 <%= form_tag root_path, method: :get do %>
   <%= text_field_tag :address,
