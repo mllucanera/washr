@@ -1,6 +1,7 @@
 class Car < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
+  accepts_nested_attributes_for :bookings
 
   validates :user, presence: true
   validates :name, presence: true

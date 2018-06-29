@@ -8,10 +8,21 @@ class Client::CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     @car.user = current_user
+    # if @car.save
+    #   redirect_to client_cars_path
+    # else
+    #   render 'new'
+    # end
     if @car.save
-      redirect_to client_cars_path
+      respond_to do |format|
+        # format.html { redirect_to client_cars_path) }
+        format.js
+      end
     else
-      render 'new'
+      respond_to do |format|
+        format.html { render 'client/car/new' }
+        format.js
+      end
     end
   end
 

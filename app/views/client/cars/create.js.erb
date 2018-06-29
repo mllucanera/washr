@@ -1,0 +1,15 @@
+function refreshForm(innerHTML) {
+  const newCarForm = document.getElementById('ajax-new-car');
+  newCarForm.innerHTML = innerHTML;
+}
+
+function addReview(reviewHTML) {
+  const cars = document.getElementById('cars');
+  cars.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+<% if @car.errors.any? %>
+  refreshForm('<%= j render "client/cars/form", user: current_user, car: @car %>');
+<% else %>
+  refreshForm('<%= j render "client/cars/form", user: current_user, car: Car.new %>');
+<% end %>
