@@ -7,11 +7,11 @@ class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: [:facebook]
 
   has_many :cars, dependent: :destroy
-  #washer bookings
+  # washer bookings
   has_many :bookings, dependent: :destroy
 
   validates :role, presence: true, inclusion: { in: %w(washer client) }
-#  validates :phone, presence: true, length: { minimum: 5 }
+  # validates :phone, presence: true, length: { minimum: 5 }
   validates :photo, presence: true, if: :washer?
 
   mount_uploader :photo, PhotoUploader

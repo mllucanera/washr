@@ -1,20 +1,25 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+  <%= image_tag "CARWASHLOGO", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
     <% if user_signed_in? %>
-
+      <% if current_user.role == 'client' %>
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My cars", client_cars_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My Washes", client_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-      <!-- Avatar with dropdown menu -->
+    <% elsif current_user.role == 'washer' %>
+      <!-- Links when logged in -->
+      <%= link_to "My History", washer_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
+    <%= link_to "Profile", profile_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+
+    <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <% if current_user.photo_url.present? %>
@@ -41,9 +46,7 @@
           </ul>
         </div>
       </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    </div>
     <% end %>
   </div>
 
@@ -54,7 +57,7 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href="#">Some mobile link</a></li>
         <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><a href="#">Log out</a></li>
       </ul>
     </div>
   </div>
