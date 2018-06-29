@@ -14,6 +14,8 @@ class User < ApplicationRecord
 #  validates :phone, presence: true, length: { minimum: 5 }
   validates :photo, presence: true, if: :washer?
 
+  mount_uploader :photo, PhotoUploader
+
   def washer?
     role == "washer"
   end

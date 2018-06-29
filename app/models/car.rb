@@ -9,4 +9,6 @@ class Car < ApplicationRecord
   validates :color, presence: true
   validates :photo, presence: true
 
+  mount_uploader :photo, PhotoUploader
+
 end
