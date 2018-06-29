@@ -1,0 +1,9 @@
+<h1> Your washes history:</h1>
+
+<% @bookings.each do |b| %>
+<p><%= b.id %></p>
+<p><%= b.car.brand %></p>
+<p><%= b.client.email %></p>
+<p><%= b.status %></p>
+<p> you earned $150 </p>
+<% end %>

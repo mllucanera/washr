@@ -4,8 +4,17 @@ class Client::BookingsController < ApplicationController
   def show
   end
 
+  def index
+    @bookings = Booking.all
+    @current_user_bookings = []
+    @bookings.each do |b|
+      if b.client == current_user
+        @current_user_bookings << b
+      end
+    end
+  end
+
   def update
-    @booking.washer = current_user
     @booking.status = 3
     @booking.save!
     redirect_to root_path
