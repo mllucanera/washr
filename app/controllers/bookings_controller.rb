@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.last
     case current_user.role
     when "client"
-      redirect_to root_path
+      redirect_to root_3path
     when "washer"
       if current_user.bookings.empty? || washed?
         @bookings = Booking.where(status: 0)
@@ -65,8 +65,8 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:car_id, :address)
   end
 
- def washed?
+  def washed?
     status = current_user.bookings.last.status
-    status == 2 || status == 3
+    status == 'washed' || status == 'completed'
   end
 end

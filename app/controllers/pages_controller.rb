@@ -57,12 +57,12 @@ class PagesController < ApplicationController
 
   def completed?
     status = current_user.cars.bookings.last.status
-    status == 3
+    status == 'completed'
   end
 
   def washed?
     status = current_user.bookings.last.status
-    status == 2 || status == 3
+    status == 'washed' || status == 'completed'
   end
 
 end
