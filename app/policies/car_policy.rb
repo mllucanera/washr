@@ -13,7 +13,6 @@ class CarPolicy < ApplicationPolicy
     end
   end
 
-
   def show?
     user_is_owner?
   end
