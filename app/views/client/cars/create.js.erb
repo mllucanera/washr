@@ -5,9 +5,9 @@ function refreshForm(innerHTML) {
 
 const newCar = `
 <div class="form-check">
-<input class="form-check-input radio_buttons optional" type="radio" value="16" name="booking[car_id]" id="booking_car_id_16">
-<label class="collection_radio_buttons" for="booking_car_id_16"><%= @car.name %> </label></div>
-`
+<input class="form-check-input radio_buttons optional" type="radio" value=@car.id name="booking[car_id]" id="booking_car_id_16">
+<label class="collection_radio_buttons" for="booking_car_id_16"><%= @car.name %> </label></div>`
+
 
 function addCar(car) {
   const cars = document.getElementsByClassName('form-group')[0];

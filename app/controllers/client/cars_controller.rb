@@ -42,6 +42,7 @@ class Client::CarsController < ApplicationController
 
   def destroy
     @car.destroy
+    redirect_to client_cars_path
   end
 
   private
