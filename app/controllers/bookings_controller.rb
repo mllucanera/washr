@@ -7,9 +7,6 @@ class BookingsController < ApplicationController
     @booking.address = params[:address]
     @cars = current_user.cars
     @car = Car.new
-    if @cars.empty?
-      redirect_to new_car_path
-    end
   end
 
 
@@ -20,6 +17,7 @@ class BookingsController < ApplicationController
       redirect_to client_booking_path(@booking)
     else
       @cars = current_user.cars
+      @car = Car.new
       render 'new'
     end
   end
