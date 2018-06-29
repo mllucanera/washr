@@ -3,13 +3,25 @@ function refreshForm(innerHTML) {
   newCarForm.innerHTML = innerHTML;
 }
 
-function addReview(reviewHTML) {
-  const cars = document.getElementById('cars');
-  cars.insertAdjacentHTML('beforeend', reviewHTML);
+const newCar = `
+<div class="form-check">
+<input class="form-check-input radio_buttons optional" type="radio" value="16" name="booking[car_id]" id="booking_car_id_16">
+<label class="collection_radio_buttons" for="booking_car_id_16"><%= @car.name %> </label></div>
+`
+
+function addCar(car) {
+  const cars = document.getElementsByClassName('form-group')[0];
+  cars.insertAdjacentHTML('beforeend', car);
+  const testenewCarForm = document.getElementById('ajax-new-car');
+  testenewCarForm.remove();
 }
 
 <% if @car.errors.any? %>
   refreshForm('<%= j render "client/cars/form", user: current_user, car: @car %>');
 <% else %>
+console.log("Entry")
+  addCar(newCar);
   refreshForm('<%= j render "client/cars/form", user: current_user, car: Car.new %>');
 <% end %>
+
+
