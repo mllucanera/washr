@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.last
     case current_user.role
     when "client"
-      redirect_to root_3path
+      redirect_to root_path
     when "washer"
       if current_user.bookings.empty? || washed?
         @bookings = Booking.where(status: 0)
