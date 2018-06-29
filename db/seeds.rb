@@ -1,11 +1,5 @@
 puts "Run seeding process!"
 
-puts "Destroying all current data"
-
-User.delete_all
-Car.delete_all
-Booking.delete_all
-
 puts "Starting seeding process with clients..."
 
 #Client
