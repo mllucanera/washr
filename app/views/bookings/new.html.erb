@@ -1,8 +1,9 @@
 <div id="new-booking">
+  <div class="container">
 <%= simple_form_for @booking do |f| %>
 <%= f.error :car %>
 
-<%= f.input :car_id, collection: @cars %>
+<%= f.input :car_id, collection: @cars, as: :radio_buttons %>
 <%= f.hidden_field :address, value: @booking.address %>
 <%= f.button :submit %>
 <% end %>
@@ -10,4 +11,6 @@
 <img src="https://picsum.photos/1300/50" alt="Map">
 <div id="ajax-new-car">
 <%= render partial: 'client/cars/form', car: @car, client: :client %>
+</div>
+
 </div>
