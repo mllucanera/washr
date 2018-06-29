@@ -1,4 +1,4 @@
-
+<div id="new-booking">
 <%= simple_form_for @booking do |f| %>
 <%= f.error :car %>
 
@@ -6,6 +6,8 @@
 <%= f.hidden_field :address, value: @booking.address %>
 <%= f.button :submit %>
 <% end %>
-
-
-<img src="https://picsum.photos/1300/500" alt="Map">
+</div>
+<img src="https://picsum.photos/1300/50" alt="Map">
+<div id="ajax-new-car">
+<%= render partial: 'client/cars/form', car: @car, client: :client %>
+</div>

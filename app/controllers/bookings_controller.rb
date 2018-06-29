@@ -6,6 +6,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.address = params[:address]
     @cars = current_user.cars
+    @car = Car.new
+    if @cars.empty?
+      redirect_to new_car_path
+    end
   end
 
 
