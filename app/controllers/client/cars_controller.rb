@@ -8,14 +8,8 @@ class Client::CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     @car.user = current_user
-    # if @car.save
-    #   redirect_to client_cars_path
-    # else
-    #   render 'new'
-    # end
     if @car.save
       respond_to do |format|
-        # format.html { redirect_to client_cars_path) }
         format.js
       end
     else
@@ -31,13 +25,12 @@ class Client::CarsController < ApplicationController
 
   def index
     @cars = current_user.cars
-  end
-
-  def edit
+    @car = Car.new
   end
 
   def update
     @car = Car.update(car_params)
+    redirect_to client_cars_path
   end
 
   def destroy

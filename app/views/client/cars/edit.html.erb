@@ -1,1 +1,28 @@
-<%= render partial: 'client/cars/form', car: @car, client: :client %>
+<div class="container">
+ <%= simple_form_for([:client, @car]) do |f| %>
+  <%= f.error_notification %>
+  <p>
+    <%= f.input :name %>
+  </p>
+
+  <br>
+    <%= f.color_field :color %>
+  <br>
+  <br>
+  <p>
+    <%= f.input :model %>
+  </p>
+  <p>
+    <%= f.input :brand %>
+  </p>
+  <p>
+    <%= f.input :plate %>
+  </p>
+  <p>
+    <%= f.input :photo %>
+  </p>
+  <%= f.input :photo_cache, as: :hidden %>
+  <p> <%= f.submit :class => 'btn btn-primary' %>
+  </p>
+<% end %>
+</div>

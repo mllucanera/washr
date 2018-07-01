@@ -8,4 +8,8 @@
 <%= link_to "Edit", edit_client_car_path(car), class: "btn-primary" %>
 <%= link_to "Delete", client_car_path(car), class: "btn-danger", method: :delete, data: { confirm: "Are you sure?"} %>
 <% end %>
-<%= link_to "Back", client_cars_path, class: "btn-warning" %>
+<%= link_to "Back", root_path, class: "btn-warning" %>
+<%= link_to "Add new car", new_client_car_path, class: "btn-primary" %>
+<div id="ajax-new-car-profile">
+  <%= render partial: 'client/cars/form', car: @car, client: :client %>
+</div>

@@ -1,18 +1,18 @@
 function refreshForm(innerHTML) {
-  const newCarForm = document.getElementById('ajax-new-car');
+  const newCarForm = document.getElementById('ajax-new-car-booking');
   newCarForm.innerHTML = innerHTML;
 }
 
 const newCar = `
 <div class="form-check">
-<input class="form-check-input radio_buttons optional" type="radio" value=@car.id name="booking[car_id]" id="booking_car_id_16">
-<label class="collection_radio_buttons" for="booking_car_id_16"><%= @car.name %> </label></div>`
+<input class="form-check-input radio_buttons optional" type="radio" value=@car.id name="booking[car_id]" id="booking_car_id">
+<label class="collection_radio_buttons" for="booking_car_id"><%= @car.name %> </label></div>`
 
 
 function addCar(car) {
   const cars = document.getElementsByClassName('form-group')[0];
   cars.insertAdjacentHTML('beforeend', car);
-  const testenewCarForm = document.getElementById('ajax-new-car');
+  const testenewCarForm = document.getElementById('ajax-new-car-booking');
   testenewCarForm.remove();
 }
 

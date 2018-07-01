@@ -21,8 +21,9 @@
   <p>
     <%= f.input :photo %>
   </p>
-  <p>
-    <%= f.submit :class => 'button-rounded' %>
+
+  <%= f.input :photo_cache, as: :hidden %>
+  <p> <%= f.submit :class => 'button-rounded' %>
   </p>
 <% end %>
 </div>
