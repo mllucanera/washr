@@ -4,62 +4,46 @@
   <%#= image_tag "CARWASHLOGO", height: 50 %>
   <%# end %>
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <% if user_signed_in? %>
-      <% if current_user.role == 'client' %>
-      <!-- Links when logged in -->
-      <%= link_to "My cars", client_cars_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My Washes", client_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-    <% elsif current_user.role == 'washer' %>
-      <!-- Links when logged in -->
-      <%= link_to "My History", washer_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
-    <%= link_to "Profile", profile_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-
-    <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <% if current_user.photo_url.present? %>
-            <%= image_tag current_user.photo.url(:bright_face), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <% else %>
-            <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <% end %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  </div>
-
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+  <!-- Avatar with dropdown menu -->
+  <div class="navbar-wagon-item">
     <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Log out</a></li>
+
+      <% if current_user.photo_url.present? %>
+      <%= image_tag current_user.photo.url(:bright_face), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+      <% else %>
+      <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+      <% end %>
+      
+      <ul class="dropdown-menu navbar-wagon-dropdown-menu">
+        <% if user_signed_in? %>
+        <li>
+          <% if current_user.role == 'client' %>
+          <!-- Links when logged in -->
+          <%= link_to "My cars", client_cars_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to "My Washes", client_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <% elsif current_user.role == 'washer' %>
+          <%= link_to "My History", washer_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to "Profile", profile_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        </li>
+        
+        <li>
+          <%= link_to "Become a washer", welcome_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        </li>
+        <li>
+
+          <%= link_to destroy_user_session_path,class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
+          <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
+        <% end %>
       </ul>
     </div>
   </div>
+
 </div>
 
