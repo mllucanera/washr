@@ -1,14 +1,25 @@
+<div id="booking">
   <div class="container">
-<%= simple_form_for @booking do |f| %>
-<%= f.error :car %>
+    <%= simple_form_for @booking do |f| %>
+    <%= f.button :submit %>
+    <%= f.error :car %>
 
-<%= f.input :car_id, collection: @cars, as: :radio_buttons %>
-<%= f.hidden_field :address, value: @booking.address %>
-<%= f.button :submit %>
-<% end %>
-</div>
-<img src="https://picsum.photos/1300/50" alt="Map">
-<div id="ajax-new-car">
-<%= render partial: 'client/cars/form', car: @car, client: :client %>
-</div>
+    <%= f.input :car_id, collection: @cars, as: :radio_buttons %>
+    <%= f.hidden_field :address, value: @booking.address %>
+    <% end %>
+  </div>
 
+  <img src="https://picsum.photos/1300/50" alt="Map">
+
+  <% if @cars.empty? %>
+  <div class="container" id="new-car-booking">
+  <h2>Add your car:</h2>
+    <%= render 'client/cars/form', car: @car, client: current_user %>
+  </div>
+  <% else %>
+  <button class="btn-primary" id="add-car-booking">Add new car</button>
+  <div id="new-car-booking" class="container hidden">
+    <%= render 'client/cars/form', car: @car, client: current_user %>
+  </div>
+  <% end %>
+</div>

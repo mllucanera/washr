@@ -1,11 +1,28 @@
+<div id="index">
+<div class="container">
+  <br>
+  <br>
+  <%= link_to "Back", root_path, class: "btn-warning" %>
+  <br>
+  <br>
+  <button class="btn-primary" id="add-car-index">Add new car</button>
+  <div id="new-car-index" class="container hidden">
+    <%= render 'form', car: @car, client: current_user %>
+  </div>
+</div>
 
 <% @cars.each do |car| %>
-<%= car.name %>
-<%= car.color %>
-<%= car.model %>
-<%= car.brand %>
-<%= link_to "View", edit_client_car_path(car), class: "btn-success" %>
-<%= link_to "Edit", edit_client_car_path(car), class: "btn-primary" %>
-<%= link_to "Delete", client_car_path(car), class: "btn-danger" %>
+<div class="row" id="car-index">
+  <div class="card">
+    <%= car.name %>
+    <%= car.color %>
+    <%= car.model %>
+    <%= car.brand %>
+    <%= link_to "View", client_car_path(car), class: "btn-success" %>
+    <%= link_to "Edit", edit_client_car_path(car), class: "btn-primary" %>
+    <%= link_to "Delete", client_car_path(car), class: "btn-danger", method: :delete, data: { confirm: "Are you sure?"} %>
+  </div>
+</div>
 <% end %>
-<%= link_to "Back", client_cars_path, class: "btn-warning" %>
+</div>
+</div>
