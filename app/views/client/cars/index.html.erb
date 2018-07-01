@@ -1,15 +1,24 @@
-
-<% @cars.each do |car| %>
-<%= car.name %>
-<%= car.color %>
-<%= car.model %>
-<%= car.brand %>
-<%= link_to "View", client_car_path(car), class: "btn-success" %>
-<%= link_to "Edit", edit_client_car_path(car), class: "btn-primary" %>
-<%= link_to "Delete", client_car_path(car), class: "btn-danger", method: :delete, data: { confirm: "Are you sure?"} %>
-<% end %>
-<%= link_to "Back", root_path, class: "btn-warning" %>
-<%= link_to "Add new car", new_client_car_path, class: "btn-primary" %>
-<div id="ajax-new-car-profile">
-  <%= render partial: 'client/cars/form', car: @car, client: :client %>
+<div class="container">
+  <br>
+  <br>
+  <%= link_to "Back", root_path, class: "btn-warning" %>
+  <br>
+  <br>
+  <%= link_to "Add new car", new_client_car_path, class: "btn-primary" %>
+  <div id="ajax-new-car-profile" class="hidden">
+    <%= render partial: 'client/cars/form', car: @car, client: :client %>
+  </div>
+  <% @cars.each do |car| %>
+  <div class="row">
+    <div class="card">
+      <%= car.name %>
+      <%= car.color %>
+      <%= car.model %>
+      <%= car.brand %>
+      <%= link_to "View", client_car_path(car), class: "btn-success" %>
+      <%= link_to "Edit", edit_client_car_path(car), class: "btn-primary" %>
+      <%= link_to "Delete", client_car_path(car), class: "btn-danger", method: :delete, data: { confirm: "Are you sure?"} %>
+    </div>
+  </div>
+  <% end %>
 </div>
