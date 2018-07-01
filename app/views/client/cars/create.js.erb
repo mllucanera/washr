@@ -1,28 +1,33 @@
-debugger;
-function refreshForm(innerHTML) {
-  const newCarForm = document.getElementById('ajax-new-car-booking');
-  newCarForm.innerHTML = innerHTML;
+const booking = document.getElementById("booking");
+  console.log("Hello again file");
+
+  let newCar = "";
+  let newCarBooking = "";
+
+if (booking)
+{
+  function refreshForm(innerHTML) {
+    const newCarForm = document.getElementById('new-car-booking');
+    newCarForm.innerHTML = innerHTML;
+  }
+
+  newCar = `
+  <div class="form-check">
+  <input class="form-check-input radio_buttons optional" type="radio" value=<%= @car.id %> name="booking[car_id]" id="booking_car_id_<%= @car.id %>">
+  <label class="collection_radio_buttons" for="booking_car_id_<%= @car.id %>"><%= @car.name %></label></div>`
+  function addCar(car) {
+    const cars = document.getElementById('new_booking');
+    cars.insertAdjacentHTML('beforeend', car);
+    newCarBooking = document.getElementById("new-car-booking");
+    newCarBooking.classList.add("hidden");
+  }
 }
-
-const newCar = `
-<div class="form-check">
-<input class="form-check-input radio_buttons optional" type="radio" value=@car.id name="booking[car_id]" id="booking_car_id">
-<label class="collection_radio_buttons" for="booking_car_id"><%= @car.name %> </label></div>`
-
-
-function addCar(car) {
-  const cars = document.getElementsByClassName('form-group')[0];
-  cars.insertAdjacentHTML('beforeend', car);
-  const testenewCarForm = document.getElementById('ajax-new-car-booking');
-  testenewCarForm.remove();
-}
-
 <% if @car.errors.any? %>
-  refreshForm('<%= j render "client/cars/form", user: current_user, car: @car %>');
+refreshForm('<%= j render "client/cars/form", user: current_user, car: @car %>');
 <% else %>
-console.log("Entry")
+if (booking)
+{
   addCar(newCar);
   refreshForm('<%= j render "client/cars/form", user: current_user, car: Car.new %>');
+}
 <% end %>
-
-

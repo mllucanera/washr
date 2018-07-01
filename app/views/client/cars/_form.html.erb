@@ -1,4 +1,3 @@
-<div class="container">
  <%= simple_form_for([current_user, @car], remote: true, url: client_cars_path) do |f| %>
   <%= f.error_notification %>
   <p>
@@ -6,7 +5,7 @@
   </p>
 
   <br>
-    <%= f.color_field :color %>
+    <%= f.color_field :color, label: 'Color' %>
   <br>
   <br>
   <p>
@@ -23,7 +22,9 @@
   </p>
 
   <%= f.input :photo_cache, as: :hidden %>
-  <p> <%= f.submit :class => 'button-rounded' %>
+
+
+  <p> <%= f.submit class: "btn btn-primary button-rounded", id: "form-submit" %>
+
   </p>
 <% end %>
-</div>
