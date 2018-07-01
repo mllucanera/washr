@@ -17,7 +17,7 @@
 
     <%= link_to "Profile", profile_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-    <%= link_to "Become a washer", become_a_washer_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Become a washer", welcome_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <%= link_to destroy_user_session_path,class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
       <%= t(".sign_out", default: "Log out") %>

@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
 #  get "/welcome", to: "pages#welcome"
-  get "/become_a_washer", to: "washers_profiles#welcome"
-  get "/registration", to: "washers_profiles#registration"
 
+  get '/welcome', to: 'washer_profiles#welcome'
+  resources :washer_profiles, only: [:new, :create]
 
   get '/profile', to: 'profiles#show', as: 'profile'
 
