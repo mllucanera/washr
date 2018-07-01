@@ -19,8 +19,6 @@
       <ul class="dropdown-menu navbar-wagon-dropdown-menu">
         <% if user_signed_in? %>
         <li>
-
-
           <% if current_user.role == 'client' %>
           <!-- Links when logged in -->
           <%= link_to "My cars", client_cars_path, class: "navbar-wagon-item navbar-wagon-link" %>
@@ -28,7 +26,6 @@
           <% elsif current_user.role == 'washer' %>
           <%= link_to "My History", washer_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
           <% end %>
-
         </li>
 
         <li>

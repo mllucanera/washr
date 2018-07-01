@@ -10,9 +10,7 @@
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
 <body>
-  <%# unless welcomes = "welcome" %>
-    <%= render 'shared/navbar' unless hidden_element? %>
-  <%# end %>
+  <%= render 'shared/navbar' if user_signed_in? %>
   <%= render 'shared/flashes' %>
   <%= yield %>
   <%= javascript_include_tag 'application' %>
