@@ -1,0 +1,22 @@
+.button-rounded {
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  color: #80d0c7;
+  font-size: 20px;
+  background: #FFF;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.button-opacity {
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
