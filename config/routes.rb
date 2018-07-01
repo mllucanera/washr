@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 #  get "/welcome", to: "pages#welcome"
   get "/welcome", to: "welcomes#welcome"
   get "/welcome/registration", to: "welcomes#registration"
+  get "/welcome/confirmation", to: "welcomes#confirmation"
+
 
   get '/profile', to: 'profiles#show', as: 'profile'
 
