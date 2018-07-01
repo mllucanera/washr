@@ -12,8 +12,8 @@
   <img src="https://picsum.photos/1300/50" alt="Map">
 
   <% if @cars.empty? %>
+  <div class="container" id="new-car-booking">
   <h2>Add your car:</h2>
-  <div class="container">
     <%= render 'client/cars/form', car: @car, client: current_user %>
   </div>
   <% else %>

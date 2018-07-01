@@ -1,13 +1,12 @@
 const booking = document.getElementById("booking");
-  console.log("Hello again file");
 
   let newCar = "";
-  let newCarBooking = "";
+  let newCarBooking = null;
 
 if (booking)
 {
   function refreshForm(innerHTML) {
-    const newCarForm = document.getElementById('new-car-booking');
+    const newCarForm = document.getElementById("new-car-booking");
     newCarForm.innerHTML = innerHTML;
   }
 
@@ -15,11 +14,15 @@ if (booking)
   <div class="form-check">
   <input class="form-check-input radio_buttons optional" type="radio" value=<%= @car.id %> name="booking[car_id]" id="booking_car_id_<%= @car.id %>">
   <label class="collection_radio_buttons" for="booking_car_id_<%= @car.id %>"><%= @car.name %></label></div>`
+
   function addCar(car) {
     const cars = document.getElementById('new_booking');
     cars.insertAdjacentHTML('beforeend', car);
-    newCarBooking = document.getElementById("new-car-booking");
-    newCarBooking.classList.add("hidden");
+    console.log("Reached here");
+    let carForm = document.getElementById("new-car-booking");
+    carForm.classList.add("hidden");
+    console.log("Reached end");
+
   }
 }
 <% if @car.errors.any? %>
