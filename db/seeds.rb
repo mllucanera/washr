@@ -77,7 +77,7 @@ t = 0
   t += 1
 end
 
-first_booking = Booking.create!(car: Car.first, status: 0)
-second_booking = Booking.create!(car: Car.second, status: 0)
+#first_booking = Booking.create!(car: Car.first, status: 0)
+#second_booking = Booking.create!(car: Car.second, status: 0)
 
 puts "Finished seeding process. Seeds Created"

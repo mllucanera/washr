@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_28_154922) do
+ActiveRecord::Schema.define(version: 2018_07_01_164843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,7 +69,18 @@ ActiveRecord::Schema.define(version: 2018_06_28_154922) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "washer_profiles", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "dni_photo"
+    t.integer "dni_id"
+    t.string "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_washer_profiles_on_user_id"
+  end
+
   add_foreign_key "bookings", "cars"
   add_foreign_key "bookings", "users"
   add_foreign_key "cars", "users"
+  add_foreign_key "washer_profiles", "users"
 end
