@@ -14,8 +14,7 @@
       <% else %>
       <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
       <% end %>
-
-
+      
       <ul class="dropdown-menu navbar-wagon-dropdown-menu">
         <% if user_signed_in? %>
         <li>
@@ -30,10 +29,9 @@
 
         <li>
           <%= link_to "Profile", profile_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
         </li>
+        
         <li>
-
           <%= link_to "Become a washer", welcome_path, class: "navbar-wagon-item navbar-wagon-link" %>
         </li>
         <li>
