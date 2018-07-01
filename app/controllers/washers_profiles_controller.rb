@@ -1,4 +1,4 @@
-class WelcomesController < ApplicationController
+class WashersProfilesController < ApplicationController
 
 def welcome
 end
@@ -8,7 +8,6 @@ def registration
 end
 
 def confirmation
-
 end
 
 end

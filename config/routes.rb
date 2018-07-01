@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
 #  get "/welcome", to: "pages#welcome"
-  get "/welcome", to: "welcomes#welcome"
-  get "/welcome/registration", to: "welcomes#registration"
-  get "/welcome/confirmation", to: "welcomes#confirmation"
+  get "/become_a_washer", to: "washers_profiles#welcome"
+  get "/registration", to: "washers_profiles#registration"
 
 
   get '/profile', to: 'profiles#show', as: 'profile'

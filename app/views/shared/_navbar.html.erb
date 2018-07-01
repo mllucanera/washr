@@ -11,12 +11,17 @@
       <!-- Links when logged in -->
       <%= link_to "My cars", client_cars_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My Washes", client_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
     <% elsif current_user.role == 'washer' %>
-      <!-- Links when logged in -->
       <%= link_to "My History", washer_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
+
     <%= link_to "Profile", profile_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <%= link_to "Become a washer", become_a_washer_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <%= link_to destroy_user_session_path,class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
+      <%= t(".sign_out", default: "Log out") %>
+    <% end %>
 
 
     <!-- Avatar with dropdown menu -->
@@ -36,11 +41,6 @@
             <li>
               <%= link_to "#" do %>
                 <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
           </ul>
