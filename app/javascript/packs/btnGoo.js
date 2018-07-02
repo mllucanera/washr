@@ -1,9 +1,16 @@
+const addressInput = document.getElementById("address-input")
+
+if (addressInput.value) {
+  changeHeight()
+  console.log("in")
+}
+
 const btnGooFunc = () => {
-  const addressInput = document.getElementById("address-input")
+  //const addressInput = document.getElementById("address-input")
   addressInput.addEventListener('input', changeHeight)
 }
 
-const changeHeight = () => {
+function changeHeight() {
   const btnGooWrapper = document.getElementById("btn-goo-wrapper")
   const map = document.getElementById("map")
   btnGooWrapper.classList.remove('hidden')
@@ -11,4 +18,16 @@ const changeHeight = () => {
   map.classList.add('map-home-input-filled')
 }
 
-export { btnGooFunc };
+const inputBlur = () => {
+  addressInput.onblur = function () {
+
+    google.maps.event.trigger(this, 'focus', {});
+    google.maps.event.trigger(this, 'keydown', {
+        keyCode: 13
+    });
+  };
+}
+
+
+
+export { btnGooFunc, inputBlur };

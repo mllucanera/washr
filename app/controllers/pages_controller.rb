@@ -39,13 +39,11 @@ class PagesController < ApplicationController
     if params[:address].present?
       address = params[:address]
       pin_address(address)
-    else
-    @markers =
-    [{
-      lat: request.location.latitude,
-      lng: request.location.longitude
-    }]
+    else @markers = 0
     end
+  end
+
+  def welcome
   end
 
   def pin_address(address)
@@ -59,12 +57,12 @@ class PagesController < ApplicationController
 
   def completed?
     status = current_user.cars.bookings.last.status
-    status == 'completed'
+    status == 3
   end
 
   def washed?
     status = current_user.bookings.last.status
-    status == 'washed' || status == 'completed'
+    status == 2 || status == 3
   end
 
 end
