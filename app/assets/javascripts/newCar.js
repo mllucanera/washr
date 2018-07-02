@@ -4,13 +4,8 @@ var newCarIndex = document.getElementById("new-car-index");
 var index = document.getElementById("index");
 
 if (index) {
-
-
   addCarIndex.addEventListener("click", (event) => {
     newCarIndex.classList.remove("hidden");
-  });
-  formSubmit.addEventListener("click", (event) => {
-    newCarIndex.classList.add("hidden");
   });
 }
 
