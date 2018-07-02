@@ -1,0 +1,25 @@
+.sign-in-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  p {
+    color: white;
+    font-size: 15px;
+    margin: 0px;
+  }
+}
+
+.aditionals-container  a {
+  color: white;
+  text-decoration: underline;
+}
+
+.form-container {
+  margin-bottom: 60px;
+}
+
+.login-form-custom {
+  margin-top: 15px;
+}
