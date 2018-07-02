@@ -1,9 +1,4 @@
-<div
-  id="map"
-  style="width: 100%;
-  height: 100vh;"
-  data-markers="<%= @markers.to_json %>">
-</div>
+<div id="map" class="map-home-input-empty" data-markers="<%= @markers.to_json %>"></div>
 
 <div class="container-address">
   <div id="address-input-box">
@@ -15,7 +10,7 @@
       %>
     <% end %>
   </div>
-  <div class="btn-goo-wrapper">
+  <div id="btn-goo-wrapper" class="hidden">
     <%= link_to "CONFIRM", new_booking_path(address: params[:address]), id: "btn-goo"%>
   </div>
 </div>

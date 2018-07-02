@@ -29,7 +29,23 @@
   color: white;
 }
 
-.btn-goo-wrapper {
+#btn-goo-wrapper {
   display: flex;
   justify-content: space-around;
+}
+
+.map-home-input-empty {
+  height: 94.5vh;
+  width: 100%; 
+}
+
+.map-home-input-filled {
+  height: 85.7vh;
+  width: 100%; 
+}
+
+.pac-container {
+	position:fixed;
+	display:block;
+	margin-top: -210px;
 }
