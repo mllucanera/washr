@@ -6,22 +6,27 @@ class User < ApplicationRecord
 
   devise :omniauthable, omniauth_providers: [:facebook]
 
+  #washer profile
+  has_one :washer_profile, dependent: :destroy
+
   has_many :cars, dependent: :destroy
-  #washer bookings
+  # washer bookings
   has_many :bookings, dependent: :destroy
 
   validates :role, presence: true, inclusion: { in: %w(washer client) }
-#  validates :phone, presence: true, length: { minimum: 5 }
-  validates :photo, presence: true, if: :washer?
+  # validates :phone, presence: true, length: { minimum: 5 }
+  # validates :photo, presence: true, if: :washer?
+
+  mount_uploader :photo, PhotoUploader
 
   def washer?
-    role == "washer"
+    self.washer_profile
   end
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)
-    user_params[:facebook_picture_url] = auth.info.image
+    user_params[:remote_photo_url] = auth.info.image
     user_params[:token] = auth.credentials.token
     user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
     user_params = user_params.to_h

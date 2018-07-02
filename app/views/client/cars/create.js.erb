@@ -1,0 +1,36 @@
+var booking = document.getElementById("booking");
+
+  var newCar = "";
+  var newCarBooking = null;
+
+if (booking)
+{
+  function refreshForm(innerHTML) {
+    var newCarForm = document.getElementById("new-car-booking");
+    newCarForm.innerHTML = innerHTML;
+  }
+
+  newCar = `
+  <div class="form-check">
+  <input class="form-check-input radio_buttons optional" type="radio" value=<%= @car.id %> name="booking[car_id]" id="booking_car_id_<%= @car.id %>">
+  <label class="collection_radio_buttons" for="booking_car_id_<%= @car.id %>"><%= @car.name %></label></div>`
+
+  function addCar(car) {
+    var cars = document.getElementById('new_booking');
+    cars.insertAdjacentHTML('beforeend', car);
+    console.log("Reached here");
+    var carForm = document.getElementById("new-car-booking");
+    carForm.classList.add("hidden");
+    console.log("Reached end");
+
+  }
+}
+<% if @car.errors.any? %>
+refreshForm('<%= j render "client/cars/form", user: current_user, car: @car %>');
+<% else %>
+if (booking)
+{
+  addCar(newCar);
+  refreshForm('<%= j render "client/cars/form", user: current_user, car: Car.new %>');
+}
+<% end %>

@@ -1,10 +1,9 @@
-<%= link_to "Confirm Address", new_booking_path(address: params[:address]), class: "btn btn-primary"  %>
-
+<%= link_to "Confirm Address", new_booking_path(address: params[:address]), class: "button-rounded"  %>
 
 <%= form_tag root_path, method: :get do %>
   <%= text_field_tag :address,
   params[:address],
-  class: "form-control",
+  class: "form-control", id: "address-input",
   placeholder: "Enter address"
   %>
 <% end %>
@@ -13,7 +12,5 @@
   id="map"
   style="width: 100%;
   height: 600px;"
-  data-markers="<%= @markers.to_json %>"
->
+  data-markers="<%= @markers.to_json %>">
 </div>
-

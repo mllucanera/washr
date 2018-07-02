@@ -2,5 +2,5 @@
 <h2>Color: <%= @car.color %></h2>
 <h2>Model: <%= @car.model %></h2>
 <h2>Brand: <%= @car.brand %></h2>
-
+<%= cl_image_tag @car.photo, height: 300, width: 400, crop: :fill %>
 <%= link_to "Back", client_cars_path, class: "btn-primary" %>

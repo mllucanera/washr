@@ -10,9 +10,10 @@ public/assets
 public/packs
 public/uploads
 public/packs-test
+public/uploads
 node_modules
 yarn-error.log
 .byebug_history
-
+public/uploads
 # Ignore application configuration
 /config/application.yml

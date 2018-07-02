@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.address = params[:address]
     @cars = current_user.cars
+    @car = Car.new
   end
 
 
@@ -16,6 +17,7 @@ class BookingsController < ApplicationController
       redirect_to client_booking_path(@booking)
     else
       @cars = current_user.cars
+      @car = Car.new
       render 'new'
     end
   end
@@ -65,8 +67,8 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:car_id, :address)
   end
 
- def washed?
+  def washed?
     status = current_user.bookings.last.status
-    status == 2 || status == 3
+    status == 'washed' || status == 'completed'
   end
 end

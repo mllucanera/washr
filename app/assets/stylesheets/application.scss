@@ -3,6 +3,7 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 
+
 // External libraries
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -13,3 +14,12 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+// gradient for background
+body {
+background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+background-repeat: no-repeat;
+background-position: center center;
+background-size: center;
+}
