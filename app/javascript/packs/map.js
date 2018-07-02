@@ -1,4 +1,7 @@
 import GMaps from 'gmaps/gmaps.js';
+import { autocomplete } from '../components/autocomplete';
+
+autocomplete();
 
 const mapElement = document.getElementById('map');
 // don't try to build a map if there's no div#map to inject in
@@ -90,9 +93,9 @@ const styles = [
   ]
 }
 ];
-
 map.addStyle({
   styles: styles,
   mapTypeId: 'map_style'
 });
 map.setStyle('map_style');
+
