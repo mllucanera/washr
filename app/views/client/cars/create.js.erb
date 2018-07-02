@@ -1,11 +1,12 @@
 var booking = document.getElementById("booking");
+var index = document.getElementById("index");
 
-  var newCar = "";
-  var newCarBooking = null;
+var newCar = "";
+var newCarBooking = null;
 
-if (booking)
-{
+if (booking) {
   function refreshForm(innerHTML) {
+    console.log("Here 2");
     var newCarForm = document.getElementById("new-car-booking");
     newCarForm.innerHTML = innerHTML;
   }
@@ -18,19 +19,38 @@ if (booking)
   function addCar(car) {
     var cars = document.getElementById('new_booking');
     cars.insertAdjacentHTML('beforeend', car);
-    console.log("Reached here");
     var carForm = document.getElementById("new-car-booking");
     carForm.classList.add("hidden");
-    console.log("Reached end");
 
   }
 }
+
+
+if (index) {
+
+  function refreshForm(innerHTML) {
+    console.log("Here 2");
+    var newCarForm = document.getElementById("new-car-index");
+    newCarForm.innerHTML = innerHTML;
+  }
+
+  newCar = `<%= @car.name %>`
+
+  function addCar(car) {
+    var cars = document.getElementById('new_index');
+    cars.insertAdjacentHTML('beforeend', car);
+    var carForm = document.getElementById("new-car-index");
+    carForm.classList.add("hidden");
+
+  }
+}
+
+// Check for errors and render form or add to list.
 <% if @car.errors.any? %>
+console.log("Here 1");
 refreshForm('<%= j render "client/cars/form", user: current_user, car: @car %>');
 <% else %>
-if (booking)
-{
-  addCar(newCar);
-  refreshForm('<%= j render "client/cars/form", user: current_user, car: Car.new %>');
-}
+addCar(newCar);
+refreshForm('<%= j render "client/cars/form", user: current_user, car: Car.new %>');
 <% end %>
+
