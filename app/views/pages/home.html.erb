@@ -1,16 +1,21 @@
-<%= link_to "Confirm Address", new_booking_path(address: params[:address]), class: "button-rounded"  %>
-
-<%= form_tag root_path, method: :get do %>
-  <%= text_field_tag :address,
-  params[:address],
-  class: "form-control", id: "address-input",
-  placeholder: "Enter address"
-  %>
-<% end %>
-
 <div
   id="map"
   style="width: 100%;
-  height: 600px;"
+  height: 100vh;"
   data-markers="<%= @markers.to_json %>">
+</div>
+
+<div class="container-address">
+  <div id="address-input-box">
+    <%= form_tag root_path, method: :get do %>
+      <%= text_field_tag :address,
+      params[:address],
+      class: "form-control", id: "address-input",
+      placeholder: "Enter address"
+      %>
+    <% end %>
+  </div>
+  <div class="btn-goo-wrapper">
+    <%= link_to "CONFIRM", new_booking_path(address: params[:address]), id: "btn-goo"%>
+  </div>
 </div>

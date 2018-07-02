@@ -1,1 +1,35 @@
-// Specific CSS for your home-page
+.container-address {
+  align-items: center;
+  width: 100vw;
+}
+
+#address-input-box {
+  flex:1;
+}
+
+#btn-goo {
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  color: #80d0c7;
+  font-size: 15px;
+  background: #FFF;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  margin: 10px;
+
+}
+
+#btn-goo:active {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-goo-wrapper {
+  display: flex;
+  justify-content: space-around;
+}

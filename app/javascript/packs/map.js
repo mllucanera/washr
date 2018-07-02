@@ -22,7 +22,7 @@ else {
       position: {lat: lat, lng: lng},
       map: map,
       title: 'Your car is here.',
-      icon: 'https://images.vexels.com/media/users/3/146247/isolated/preview/8d0c013e7700b62c118c215ad86cf5c8-car-with-water-drop-icon-by-vexels.png'
+      icon: 'http://res.cloudinary.com/sebastianbuffosempe/image/upload/v1530550811/carwasher-icon_g7ojz7.png'
     });
     map.addMarker(marker);
   })
