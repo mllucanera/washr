@@ -47,7 +47,6 @@ end
 8.times do
     #Car data
     car_data = {
-
       user: User.where(role: :client)[c/2],
       plate: PLATE[c],
       color: COLOR[c],
