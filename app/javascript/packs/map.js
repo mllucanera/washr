@@ -18,8 +18,10 @@ else {
     var marker = new google.maps.Marker({
       position: {lat: lat, lng: lng},
       map: map,
-      title: 'Hello World!'
+      title: 'Your car is here.',
+      icon: 'https://images.vexels.com/media/users/3/146247/isolated/preview/8d0c013e7700b62c118c215ad86cf5c8-car-with-water-drop-icon-by-vexels.png'
     });
+    map.addMarker(marker);
   })
 }
 
