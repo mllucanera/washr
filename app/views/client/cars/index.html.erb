@@ -5,10 +5,17 @@
     <%= link_to "Back", root_path, class: "btn-warning" %>
     <br>
     <br>
-    <button class="btn-primary" id="add-car-index">Add new car</button>
-    <div id="new-car-index" class="container hidden">
-      <%= render 'form', car: @car, client: current_user %>
+
+    <button type="button" class="btn btn-primary" id="add-car-index" data-toggle="modal" data-target=".bs-example-modal-lg">+ Add new Car</button>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg container hidden" id="new-car-index" role="document">
+        <div class="modal-content">
+          <%= render 'form', car: @car, client: current_user %>
+        </div>
+      </div>
     </div>
+
     <div id="new_index">
       <% @cars.each do |car| %>
       <div class="row" id="car-index">
