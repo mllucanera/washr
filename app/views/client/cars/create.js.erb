@@ -1,12 +1,12 @@
-const booking = document.getElementById("booking");
+var booking = document.getElementById("booking");
 
-  let newCar = "";
-  let newCarBooking = null;
+  var newCar = "";
+  var newCarBooking = null;
 
 if (booking)
 {
   function refreshForm(innerHTML) {
-    const newCarForm = document.getElementById("new-car-booking");
+    var newCarForm = document.getElementById("new-car-booking");
     newCarForm.innerHTML = innerHTML;
   }
 
@@ -16,10 +16,10 @@ if (booking)
   <label class="collection_radio_buttons" for="booking_car_id_<%= @car.id %>"><%= @car.name %></label></div>`
 
   function addCar(car) {
-    const cars = document.getElementById('new_booking');
+    var cars = document.getElementById('new_booking');
     cars.insertAdjacentHTML('beforeend', car);
     console.log("Reached here");
-    let carForm = document.getElementById("new-car-booking");
+    var carForm = document.getElementById("new-car-booking");
     carForm.classList.add("hidden");
     console.log("Reached end");
 

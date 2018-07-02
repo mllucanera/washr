@@ -1,7 +1,7 @@
-const addCarIndex = document.getElementById("add-car-index");
-const formSubmit = document.getElementById("form-submit");
-const newCarIndex = document.getElementById("new-car-index");
-const index = document.getElementById("index");
+var addCarIndex = document.getElementById("add-car-index");
+var formSubmit = document.getElementById("form-submit");
+var newCarIndex = document.getElementById("new-car-index");
+var index = document.getElementById("index");
 
 if (index) {
 
@@ -14,7 +14,7 @@ if (index) {
   });
 }
 
-const addCarBooking = document.getElementById("add-car-booking");
+var addCarBooking = document.getElementById("add-car-booking");
 if (addCarBooking)
 {
   addCarBooking.addEventListener("click", (event) => {
