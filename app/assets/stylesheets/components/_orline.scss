@@ -1,0 +1,19 @@
+.orline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    margin: 0;
+    padding: 10px 10px;
+    color: rgba(255,255,255,0.5);
+    font-size: 16px;
+  }
+}
+
+.white-line {
+  width: 40%;
+  height: 0px;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
