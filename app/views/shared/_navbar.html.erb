@@ -25,11 +25,9 @@
     <li>
       <%= link_to "Become a washer", welcome_path, class: "navbar-wagon-item navbar-wagon-link" %>
     </li>
-    <li>
 
-      <%= link_to destroy_user_session_path,class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
-      <%= t(".sign_out", default: "Log out") %>
-      <% end %>
+    <li>
+    <%= link_to "Log out", destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete %>
     </li>
     <% end %>
   </ul>
