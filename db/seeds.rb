@@ -46,6 +46,7 @@ i = 0
       color: COLOR[i],
       name: NAME[i],
       brand: BRAND[i],
+      model: "fit",
       photo: "*"
     }
     car = Car.new(car_data)

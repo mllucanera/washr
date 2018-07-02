@@ -1,13 +1,5 @@
-<h1>Bookings#show FOR THE CLIENT</h1>
-<br>
-<p>Car: <%= @booking.car.name %></p>
-<p>Address: <%= @booking.address %></p>
-<p>Service: DELUXE </p>
-<p>Time: 40 mis</p>
-<P>Price: $150 </P>
-
-<p>STATUS: <%= @booking.status %></p>
-
+<%= render '/shared/car_card', booking: @booking %>
+<!--
 <% case @booking.status %>
   <% when 'washer_pending' %>
     <p> We are looking for a washer</p>
@@ -16,5 +8,6 @@
   <% when 'washed' %>
     <%= link_to "OK", client_booking_path(@booking.id), method: :put, class: "btn btn-success" %>
   <% when 'completed' %>
-    <%= link_to "Home", root_path, class: "btn btn-success" %>
+    <%= link_to "Home", root_path, class: "button-rounded" %>
 <% end %>
+ -->
