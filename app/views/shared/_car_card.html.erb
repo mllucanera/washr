@@ -3,22 +3,33 @@
   <div class="background-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300');">
   </div>
   <div class="white-box">
-    <p> HXS 939</p>
+    <p> <%= booking.car.plate.upcase %> </p>
+  </div>
+  <div class="box-description">
+    <div class="box-list">
+      <ul>
+        <li>
+          <i class="fas fa-car"></i>
+          <%= booking.car.brand.capitalize%>
+          <%=booking.car.model.capitalize%> - <%= booking.car.color%>
+        </li>
+        <hr>
+        <li>
+          <i class="fas fa-map-marker-alt"></i>
+          <%=booking.address.capitalize%>
+        </li>
+        <hr>
+        <li>
+          <i class="far fa-clock"></i> 40 minutes</li>
+      </ul>
     </div>
-    <div class="box-description">
-      <div class="box-list">
-        <ul>
-          <li><i class="fas fa-car"></i> Honda Fit - Black</li>
-          <hr>
-          <li><i class="fas fa-map-marker-alt"></i> Av. Niceto Vega 7569</li>
-          <hr>
-          <li><i class="far fa-clock"></i></i> 40 minutes</li>
-        </ul>
-      </div>
-      <div class="line">
-        <p> DEADLINE TIME: 15.02 hs</p>
-      </div>
+    <div class="line">
+      <p>
+        DEADLINE TIME:
+        <%= (booking.created_at + 2400000).strftime("%H:%m") %>
+      </p>
     </div>
   </div>
+</div>
 </div>
 
