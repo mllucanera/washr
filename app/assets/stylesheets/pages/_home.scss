@@ -36,16 +36,20 @@
 
 .map-home-input-empty {
   height: 94.5vh;
-  width: 100%; 
+  width: 100%;
 }
 
 .map-home-input-filled {
   height: 85.7vh;
-  width: 100%; 
+  width: 100%;
 }
 
 .pac-container {
 	position:fixed;
 	display:block;
 	margin-top: -210px;
+}
+
+#address-input {
+  color: #a3a1a1;
 }
