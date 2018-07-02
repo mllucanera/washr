@@ -39,7 +39,12 @@ class PagesController < ApplicationController
     if params[:address].present?
       address = params[:address]
       pin_address(address)
-    else @markers = 0
+    else
+    @markers =
+    [{
+      lat: request.location.latitude,
+      lng: request.location.longitude
+    }]
     end
   end
 
