@@ -6,7 +6,6 @@ var index = document.getElementById("index");
 if (index) {
   addCarIndex.addEventListener("click", (event) => {
     newCarIndex.classList.remove("hidden");
-    console.log("Here 0");
   });
 }
 
