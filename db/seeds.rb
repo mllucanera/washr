@@ -8,14 +8,15 @@ C_FIRST_NAME = %w(Juana Sofia Ivan Nicolas)
 C_LAST_NAME = %w(Cervetti Ninaus Cosentino Keneddy)
 
 #Washer
-W_EMAIL = %w(javeirp@gmail.com lottamendi@yahoo.com)
-W_FIRST_NAME = %w(Javeir Lionel)
-W_LAST_NAME = %w(Pavon Ottamendi)
+W_EMAIL = %w(javeirp@gmail.com fernandez_hugo@yahoo.com)
+W_FIRST_NAME = %w(Javeir Hugo)
+W_LAST_NAME = %w(Perez Fernandez)
 
 #Car
 PLATE = %w(EJK224 HNE459 HPG400 MMY329 JTJ539 GKT550 GOO864 JOU360)
 COLOR = %w(Blue Grey Black White Black Black Black Black)
-NAME = %w(206 Tiida 307 C3 Clio Gol 206 Civic)
+NAME = ["Mio", "Papa", "Amor", "Mama", "Javier auto", "Mariana auto", "Peugot Negra", "Honda Negra"]
+MODEL = %w(206 Tiida 307 C3 Clio Gol 206 Civic)
 BRAND = %w(Peugot Nissan Peugot Citroen Renault Volkswagen Peugot Honda)
 
 
@@ -36,7 +37,8 @@ c = 0
   # Create client
   client = User.new(client_data)
   client.save
-  client.remote_photo_url = "https://res.cloudinary.com/logicisaliar/image/upload/v1530545184/user#{t + 1}.jpg"
+  client.remote_photo_url = "https://res.cloudinary.com/logicisaliar/image/upload/v1530547670/user#{t + 1}.jpg"
+
   client.save
   t += 1
 
@@ -50,6 +52,7 @@ end
       plate: PLATE[c],
       color: COLOR[c],
       name: NAME[c],
+      model: MODEL[c],
       brand: BRAND[c],
       photo: "*"
     }
