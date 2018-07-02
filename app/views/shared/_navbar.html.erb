@@ -1,49 +1,35 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <%#= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%#= image_tag "CARWASHLOGO", height: 50 %>
-  <%# end %>
+<div id="new-navbar">
 
+  <% if current_user.photo_url.present? %>
+  <%= image_tag current_user.photo.url(:bright_face), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+  <% else %>
+  <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+  <% end %>
 
-  <!-- Avatar with dropdown menu -->
-  <div class="navbar-wagon-item">
-    <div class="dropdown">
-
-      <% if current_user.photo_url.present? %>
-      <%= image_tag current_user.photo.url(:bright_face), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-      <% else %>
-      <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+  <ul class="dropdown-menu navbar-wagon-dropdown-menu" style="left: 30px;">
+    <% if user_signed_in? %>
+    <li>
+      <% if current_user.role == 'client' %>
+      <!-- Links when logged in -->
+      <%= link_to "My cars", client_cars_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My Washes", client_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% elsif current_user.role == 'washer' %>
+      <%= link_to "My History", washer_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% end %>
-      
-      <ul class="dropdown-menu navbar-wagon-dropdown-menu">
-        <% if user_signed_in? %>
-        <li>
-          <% if current_user.role == 'client' %>
-          <!-- Links when logged in -->
-          <%= link_to "My cars", client_cars_path, class: "navbar-wagon-item navbar-wagon-link" %>
-          <%= link_to "My Washes", client_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
-          <% elsif current_user.role == 'washer' %>
-          <%= link_to "My History", washer_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
-          <% end %>
-        </li>
+    </li>
 
-        <li>
-          <%= link_to "Profile", profile_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        </li>
-        
-        <li>
-          <%= link_to "Become a washer", welcome_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        </li>
-        <li>
+    <li>
+      <%= link_to "Profile", profile_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    </li>
 
-          <%= link_to destroy_user_session_path,class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
-          <%= t(".sign_out", default: "Log out") %>
-          <% end %>
-        </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
+    <li>
+      <%= link_to "Become a washer", welcome_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    </li>
+
+    <li>
+    <%= link_to "Log out", destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete %>
+    </li>
+    <% end %>
+  </ul>
 
 </div>
-

@@ -43,6 +43,9 @@ class PagesController < ApplicationController
     end
   end
 
+  def welcome
+  end
+
   def pin_address(address)
     res = Geocoder.search(address)
     @markers =
@@ -54,12 +57,12 @@ class PagesController < ApplicationController
 
   def completed?
     status = current_user.cars.bookings.last.status
-    status == 'completed'
+    status == 3
   end
 
   def washed?
     status = current_user.bookings.last.status
-    status == 'washed' || status == 'completed'
+    status == 2 || status == 3
   end
 
 end

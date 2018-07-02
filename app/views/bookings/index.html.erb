@@ -1,28 +1,8 @@
+
 <h1>Washrs requests:</h1>
 <div class="container">
   <% @bookings.each do |booking| %>
-  <div class="row">
-
-    <div class="col-xs-8">
-      <h3> DELUXE </h3>
-      <p><%= booking.car.brand%> - <%= booking.car.model %></p>
-      <p><%= booking.car.color %></p>
-      <% time = (Time.now - booking.created_at) %>
-      <p> <%= time %> ago</p>
-    </div>
-
-    <div class="col-xs-4">
-      <p> kms </p>
-      <p>zona </p>
-      <p> $150 </p>
-    </div>
-
-    <div class="row" style="text-align: center">
-      <%= link_to "more info", booking_path(booking.id), class: "btn btn-primary" %>
-      <%= link_to "pick", booking_path(booking.id), method: :put, data: { confirm: "Are you sure you want to pick this wash?"}, class: "btn btn-success" %>
-    </div>
-
-  </div>
-
+  <%= render '/shared/small_car_card', booking: booking %>
   <% end %>
 </div>
+

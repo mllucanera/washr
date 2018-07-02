@@ -1,7 +1,4 @@
 import GMaps from 'gmaps/gmaps.js';
-import { autocomplete } from '../components/autocomplete';
-
-autocomplete();
 
 const mapElement = document.getElementById('map');
 // don't try to build a map if there's no div#map to inject in
@@ -22,87 +19,8 @@ else {
       position: {lat: lat, lng: lng},
       map: map,
       title: 'Your car is here.',
-      icon: 'https://images.vexels.com/media/users/3/146247/isolated/preview/8d0c013e7700b62c118c215ad86cf5c8-car-with-water-drop-icon-by-vexels.png'
+      icon: 'http://res.cloudinary.com/sebastianbuffosempe/image/upload/v1530550811/carwasher-icon_g7ojz7.png'
     });
     map.addMarker(marker);
   })
 }
-
-
-const styles = [
-{
-  "featureType": "landscape.natural",
-  "elementType": "geometry.fill",
-  "stylers": [
-  {
-    "visibility": "on"
-  },
-  {
-    "color": "#e0efef"
-  }
-  ]
-},
-{
-  "featureType": "poi",
-  "elementType": "geometry.fill",
-  "stylers": [
-  {
-    "visibility": "on"
-  },
-  {
-    "hue": "#1900ff"
-  },
-  {
-    "color": "#c0e8e8"
-  }
-  ]
-},
-{
-  "featureType": "road",
-  "elementType": "geometry",
-  "stylers": [
-  {
-    "lightness": 100
-  },
-  {
-    "visibility": "simplified"
-  }
-  ]
-},
-{
-  "featureType": "road",
-  "elementType": "labels",
-  "stylers": [
-  {
-    "visibility": "off"
-  }
-  ]
-},
-{
-  "featureType": "transit.line",
-  "elementType": "geometry",
-  "stylers": [
-  {
-    "visibility": "on"
-  },
-  {
-    "lightness": 700
-  }
-  ]
-},
-{
-  "featureType": "water",
-  "elementType": "all",
-  "stylers": [
-  {
-    "color": "#7dcdcd"
-  }
-  ]
-}
-];
-map.addStyle({
-  styles: styles,
-  mapTypeId: 'map_style'
-});
-map.setStyle('map_style');
-
