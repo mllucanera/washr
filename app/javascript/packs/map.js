@@ -24,7 +24,7 @@ else {
       title: 'Your car is here.',
       icon: 'http://res.cloudinary.com/sebastianbuffosempe/image/upload/v1530550811/carwasher-icon_g7ojz7.png'
     });
-    map.addMarker(marker);
+    map.addMarkers(marker);
   })
 }
 
