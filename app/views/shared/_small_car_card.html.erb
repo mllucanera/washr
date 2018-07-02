@@ -1,0 +1,30 @@
+<div class="cards-container">
+  <div class="card-container">
+    <div class="card-text-group">
+      <div class="car-title">
+        <h5><%= booking.car.name.capitalize %></h5>
+        <!-- <h6> HXS 939 </h6> -->
+      </div>
+      <!-- <hr> -->
+      <div class="car-description">
+        <p> <%= booking.car.brand.capitalize %> <%= booking.car.model.capitalize %></p>
+        <p>  <%= booking.car.color.capitalize  %> </p>
+        <% time = (Time.now - booking.created_at) %>
+        <p id="mins"> <%= time %> ago </p>
+      </div>
+    </div>
+
+    <div class="right-description">
+      <p> 5.2 kms </p>
+      <p class="dark-blue-light-italic"> Palermo </p>
+      <p id="price"> $150 </p>
+    </div>
+
+  </div>
+  <div class="row-button">
+    <div class="button-pick">
+      <%= link_to "Pick Request", booking_path(booking.id), method: :put %>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,20 +1,20 @@
  <%= simple_form_for([current_user, @car], remote: true, url: client_cars_path) do |f| %>
   <%= f.error_notification %>
   <p>
-    <%= f.input :name %>
+    <%= f.input :name, label: false, placeholder: "Name" %>
   </p>
-    <%= f.input :color %>
+    <%= f.input :color, label: false, placeholder: "Color" %>
   <p>
-    <%= f.input :model %>
-  </p>
-  <p>
-    <%= f.input :brand %>
+    <%= f.input :model, label: false, placeholder: "Model" %>
   </p>
   <p>
-    <%= f.input :plate %>
+    <%= f.input :brand, label: false, placeholder: "Brand" %>
   </p>
   <p>
-    <%= f.input :photo %>
+    <%= f.input :plate, label: false, placeholder: "Plate" %>
+  </p>
+  <p>
+    <%= f.input :photo, label: false %>
   </p>
 
   <%= f.input :photo_cache, as: :hidden %>
