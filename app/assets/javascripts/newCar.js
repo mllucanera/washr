@@ -1,10 +1,10 @@
-var addCarIndex = document.getElementById("add-car-index");
+var confirmBooking = document.getElementById("confirm-booking");
 var formSubmit = document.getElementById("form-submit");
 var newCarIndex = document.getElementById("new-car-index");
 var index = document.getElementById("index");
 
 if (index) {
-  addCarIndex.addEventListener("click", (event) => {
+  confirmBooking.addEventListener("click", (event) => {
     newCarIndex.classList.remove("hidden");
   });
 }
