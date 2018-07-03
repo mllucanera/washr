@@ -21,12 +21,19 @@
   background: rgba(255, 255, 255, 0.4);
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 10em;
 }
 
+.width-100 {
+  width: 100%;
+}
 
 .button-position {
   position: relative;
-  top: 59px;
+  top: 40px;
 }
 
 .center {

@@ -1,5 +1,12 @@
-.hidden {
-  display: none;
+.icon-position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  p {
+    margin: 0;
+    padding-left: 15px;
+  }
 }
 
 .modal-form-container {

@@ -3,21 +3,21 @@ puts "Run seeding process!"
 puts "Starting seeding process with clients..."
 
 #Client
-C_EMAIL = %w(juanacer@hotmail.com sofian@gmail.com ivanc@gmail.com nicoken@hotmail.com)
+C_EMAIL = %w(juanacer@gmail.com sofian@gmail.com ivanc@gmail.com nicoken@gmail.com)
 C_FIRST_NAME = %w(Juana Sofia Ivan Nicolas)
 C_LAST_NAME = %w(Cervetti Ninaus Cosentino Keneddy)
 
 #Washer
-W_EMAIL = %w(javeirp@gmail.com fernandez_hugo@yahoo.com)
-W_FIRST_NAME = %w(Javeir Hugo)
+W_EMAIL = %w(javierp@gmail.com fernandez_hugo@gmail.com)
+W_FIRST_NAME = %w(Javier Hugo)
 W_LAST_NAME = %w(Perez Fernandez)
 
 #Car
-PLATE = %w(EJK224 HNE459 HPG400 MMY329 JTJ539 GKT550 GOO864 JOU360)
+PLATE = ["ejk 224", "hne 459", "hpg 400", "MMY 329", "JTJ 539", "GKT550", "GOO864", "JOU360"]
 COLOR = %w(Blue Grey Black White Black Black Black Black)
-NAME = ["Mio", "Papa", "Amor", "Mama", "Javier auto", "Mariana auto", "Peugot Negra", "Honda Negra"]
+NAME = ["My car", "Dad's", "Honey", "Mum's", "Javier's car", "Mariana's car", "Sweetie Peugeot", "The Kennedy"]
 MODEL = %w(206 Tiida 307 C3 Clio Gol 206 Civic)
-BRAND = %w(Peugot Nissan Peugot Citroen Renault Volkswagen Peugot Honda)
+BRAND = %w(Peugeot Nissan Peugeot Citroen Renault Volkswagen Peugeot Honda)
 
 
 t = 0
@@ -86,8 +86,8 @@ end
 end
 
 puts "Creating bookings"
-first_booking = Booking.create!(address: "La Plata", car: Car.first, status: 0)
-second_booking = Booking.create!(address: "Palermo", car: Car.fifth, status: 3)
-third_booking = Booking.create!(address: "Buenos Aires", car: Car.third, status: 2)
+first_booking = Booking.create!(address: "Av. Libertador 4673", car: Car.first, status: 0)
+second_booking = Booking.create!(address: "Ecuador 1458", car: Car.fifth, status: 3)
+third_booking = Booking.create!(address: "San Martin de Tours 3307", car: Car.third, status: 2)
 
 puts "Finished seeding process. Seeds Created"

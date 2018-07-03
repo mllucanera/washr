@@ -9,7 +9,6 @@ class BookingsController < ApplicationController
     @car = Car.new
   end
 
-
   def create
     @booking = Booking.new(booking_params)
     @booking.status = 0
@@ -56,9 +55,13 @@ class BookingsController < ApplicationController
     redirect_to booking_path(@booking.id)
   end
 
-
+  def washer_history
+    @bookings = current_user.bookings
+    @completed = Booking.where(status: 'completed').where(user_id: current_user.id)
+  end
+  
   private
-
+  
   def set_booking
     @booking = Booking.find(params[:id])
   end
