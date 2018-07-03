@@ -51,7 +51,8 @@ class PagesController < ApplicationController
     @markers =
     [{
       lat: res.first.coordinates[0],
-      lng: res.first.coordinates[1]
+      lng: res.first.coordinates[1],
+      icon: 'http://res.cloudinary.com/sebastianbuffosempe/image/upload/v1530624744/autito_olbrkg.png'
     }]
   end
 
