@@ -233,7 +233,7 @@ else {
       position: {lat: lat, lng: lng},
       map: map,
       title: 'Your car is here.',
-      icon: 'http://res.cloudinary.com/sebastianbuffosempe/image/upload/v1530624744/autito_olbrkg.png'
+      icon: 'http://res.cloudinary.com/sebastianbuffosempe/image/upload/v1530630810/white_vbvbjz.png'
     });
     map.addMarker(marker);
   })
