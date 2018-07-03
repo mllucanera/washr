@@ -1,13 +1,18 @@
-<img src="https://picsum.photos/70/70" alt="">
- <p>Yay!</p>
- <br>
+<div>
+  <img src="<%= asset_url('cleancar.png') %>" alt="" class="icon-box-title">
+  <hr>
+  <h3> Yay! </h3>
+</div>
+<% last_name = "" %>
 <% if booking.washer.first_name %>
 <% washer_name = booking.washer.first_name %>
+<% last_name = booking.washer.last_name %>
 <% else %>
 <% washer_name = "a washer" %>
+<% last_name = "" %>
 <% end %>
- <p>
-Your car will be washed by <%= washer_name %>
-and will be clean by <%= (booking.created_at + 2400000).strftime("%H:%m") %>
- </p>
+<p>
+  Your car will be washed by <%= washer_name %> <%= last_name %>
+  and will be sparkling by <%= (booking.created_at + 2400000).strftime("%H:%m") %>
+</p>
 

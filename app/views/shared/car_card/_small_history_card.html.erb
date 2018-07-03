@@ -2,10 +2,14 @@
   <div class="card-container">
     <div class="card-text-group">
       <div class="car-title">
+        <% if current_user.role == 'client' %>
         <h5><%= booking.car.name.capitalize %></h5>
+        <% elsif current_user.role == 'washer' %>
+        <h5><%= booking.car.plate.upcase %></h5>
+        <% end %>
       </div>
       <div class="car-description">
-        <p> <%= booking.address %></p>
+        <p> <%= booking.address.truncate(18) %></p>
         <% if current_user.role == "client" %>
         <p class="spacing" id="mins"> Washed by <%= booking.washer.first_name %> <%= booking.washer.last_name %></p>
         <% elsif current_user.role == "washer" %>
