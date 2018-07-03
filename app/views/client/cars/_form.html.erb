@@ -1,35 +1,54 @@
-<div class="modal-form-container">
-<%= simple_form_for([current_user, @car], remote: true, url: client_cars_path, class: "form-container") do |f| %>
-<%= f.error_notification %>
-<div class="form-inputs">
+    <div class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
 
-  <div class="input-sign-up">
-    <%= f.input :name, label: false, placeholder: "Name (Mama's car)" %>
-  </div>
-  <div class="input-sign-up">
-    <%= f.input :color, label: false, placeholder: "Color (Black)" %>
-  </div>
-  <div class="input-sign-up">
-    <%= f.input :model, label: false, placeholder: "Model (206)" %>
-  </div>
-  <div class="input-sign-up">
-    <%= f.input :brand, label: false, placeholder: "Brand (Peugot)" %>
-  </div>
-  <div class="input-sign-up">
-    <%= f.input :plate, label: false, placeholder: "Plate (GKS125)" %>
-  </div>
-  <div style="display: none;">
-    <%= f.input :photo, label: false %>
-  </div>
-  <div>
-    <div class="icon-position" onclick="document.getElementById('car_photo').click();">
-      <i class="fas fa-camera"></i>
-      <p>Upload picture</p>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+            <h4 class="modal-title" style="color: black;">Add New Car</h4>
+          </div>
+
+          <div class="modal-body">
+            <div class="modal-form-container">
+              <%= simple_form_for([current_user, @car], remote: true, url: client_cars_path, class: "form-container") do |f| %>
+                <%= f.error_notification %>
+                <div class="form-inputs">
+                  <div class="input-sign-up">
+                    <%= f.input :name, label: false, placeholder: "Name (Mama's car)" %>
+                  </div>
+
+                  <div class="input-sign-up">
+                    <%= f.input :color, label: false, placeholder: "Color (Black)" %>
+                  </div>
+
+                  <div class="input-sign-up">
+                    <%= f.input :model, label: false, placeholder: "Model (206)" %>
+                  </div>
+
+                  <div class="input-sign-up">
+                    <%= f.input :brand, label: false, placeholder: "Brand (Peugot)" %>
+                  </div>
+
+                  <div class="input-sign-up">
+                    <%= f.input :plate, label: false, placeholder: "Plate (GKS125)" %>
+                  </div>
+
+                  <div style="display: none;">
+                    <%= f.input :photo, label: false %>
+                  </div>
+
+                  <div>
+                    <div class="icon-position" onclick="document.getElementById('car_photo').click();">
+                      <i class="fas fa-camera"></i>
+                      <p>Upload picture</p>
+                    </div>
+                  </div>
+
+                </div>
+                <%= f.input :photo_cache, as: :hidden %>
+                <p><%= f.submit class: "button-rounded width-100 btn-modal", id: "form-submit" %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<%= f.input :photo_cache, as: :hidden %>
-<p> <%= f.submit class: "button-rounded width-100 btn-modal", id: "form-submit" %>
-</p>
-<% end %>
-</div>
