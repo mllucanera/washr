@@ -1,9 +1,17 @@
-<h1> Your washes history:</h1>
+<div class="wrapper">
+  <div class="icon-box-title">
+    <img src="<%= asset_url('cleancar.png') %>" alt="" class="icon-box-title">
+  </div>
+<button class="button-rounded">TOTAL EARNED: <%= @completed.size * 260 %>$</button>
+  <div class="box-inline-title">
+    <p>My wash's services</p>
+  </div>
 
-<% @bookings.each do |b| %>
-<p><%= b.id %></p>
-<p><%= b.car.brand %></p>
-<p><%= b.client.email %></p>
-<p><%= b.status %></p>
-<p> you earned $150 </p>
-<% end %>
+  <% @bookings.each do |booking| %>
+    <%= render '/shared/car_card/small_history_card', booking: booking %>
+  <% end %>
+  <%= link_to root_path, class: "button-opacity center" do %>
+    <img src="<%= asset_url('add.png')%>" alt="" class="icon-small">
+    New wash
+  <% end %>
+</div>

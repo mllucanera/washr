@@ -1,13 +1,21 @@
-<!-- Logo and "My Services History" -->
-
-
-
+<div class="wrapper">
+  <div class="icon-box-title">
+    <img src="<%= asset_url('cleancar.png') %>" alt="" class="icon-box-title">
+  </div>
 <button class="button-rounded">TOTAL EARNED: <%= @completed.size * 260 %>$</button>
-<% @bookings.each do |booking| %>
-    <%#= render '/shared/PARTIAL_FILE_NAME_THAT_YOU_MAKE' booking: booking %>
+  <div class="box-inline-title">
+    <p>My wash's services</p>
+  </div>
 
-<% end %>
-<%= link_to "+ New wash", root_path, class: "button-opacity center" %>
+  <% @bookings.each do |booking| %>
+    <%= render '/shared/car_card/small_history_card', booking: booking %>
+  <% end %>
+  <%= link_to root_path, class: "button-opacity center" do %>
+    <img src="<%= asset_url('add.png')%>" alt="" class="icon-small">
+    New wash
+  <% end %>
+</div>
+
 
 
 

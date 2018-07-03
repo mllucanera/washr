@@ -1,7 +1,15 @@
-<!-- Logo and "My Services History" -->
-
-<% @current_user_bookings.each do |booking| %>
-    <%#= render '/shared/PARTIAL_FILE_NAME_THAT_YOU_MAKE' booking: booking %>
-
-<% end %>
-<%= link_to "+ New wash", root_path, class: "button-opacity center" %>
+<div class="wrapper">
+  <div class="icon-box-title">
+    <img src="<%= asset_url('car.png') %>" alt="" class="icon-box-title">
+  </div>
+  <div class="box-inline-title">
+    <p>My history washes</p>
+  </div>
+  <% @current_user_bookings.each do |booking| %>
+  <%= render '/shared/car_card/small_history_card', booking: booking %>
+  <% end %>
+  <%= link_to root_path, class: "button-opacity center" do %>
+  <img src="<%= asset_url('add.png')%>" alt="" class="icon-small">
+  New wash
+  <% end %>
+</div>
