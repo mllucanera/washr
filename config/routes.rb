@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   end
 
   # washer routes
+  get '/bookings/history', to: 'bookings#washer_history', as: 'washer_bookings'
   resources :bookings, only: [:show, :index, :update, :edit]
+
   namespace :washer do
     resources :bookings, only: [:index]
   end

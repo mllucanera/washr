@@ -56,6 +56,8 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
   end
 
+  def washer_history
+  end
 
   private
 
