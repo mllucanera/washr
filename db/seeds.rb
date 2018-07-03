@@ -92,3 +92,5 @@ second_booking = Booking.create!(address: "Ecuador 1458", car: Car.fifth, status
 third_booking = Booking.create!(address: "San Martin de Tours 3307", car: Car.third, status: 0)
 
 puts "Finished seeding process. Seeds Created"
+
+User.create!(email: "samulevy@gmail.com", password: "123456")
