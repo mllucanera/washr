@@ -1,8 +1,5 @@
 <div id="index">
   <div class="container">
-    <%= link_to root_path do %>
-    <i class="fas fa-arrow-left"></i>
-    <% end %>
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
       <div class="modal-dialog modal-lg container hidden" id="new-car-index" role="document">
         <div class="modal-content">
@@ -15,10 +12,7 @@
       <%= render '/shared/small_car_card_client', car: car %>
       <% end %>
       <div class="center">
-
-       <button type="button" class="button-opacity btn-modal" id="add-car-index" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fas fa-plus-circle"></i> Add new Car</button>
-
-
+       <button type="button" class="button-opacity btn-modal" id="add-car-index" data-toggle="modal" data-target=".bs-example-modal-lg"><img src="<%= asset_url('add.png') %>" alt="" class="icon-small"> Add new Car</button>
     </div>
   </div>
 </div>
