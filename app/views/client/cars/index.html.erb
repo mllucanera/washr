@@ -4,7 +4,7 @@
       <i class="fas fa-arrow-left"></i>
     <% end %>
 
-    <%= render 'form', car: @car, client: current_user %>
+    <%= render 'car_form_modal', car: @car, client: current_user %>
 
     <div id="new_index">
       <% @cars.each do |car| %>
