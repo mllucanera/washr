@@ -1,1 +1,16 @@
-YOUR PROFILE
+    <div class="container padding-top-edit">
+      <h1><strong><%= @role.capitalize %></strong> profile:</h1>
+      <div>
+      <%= cl_image_tag @user.photo, height: 150, width: 150, crop: :fill, class: "center" %>
+        <p>Member since - <strong><%= @user_since %></strong> days.</p>
+        <% if @role = "client" %>
+        <p>Cars - <strong><%= @user_cars.count %></strong> cars.</p>
+        <% end %>
+        <p>Bookings - <strong><%= @user_bookings %></strong> bookings.</p>
+        <p>Last booking - <strong><%= @last_booking %></strong></p>
+      </div>
+
+    </div>
+
+
+
