@@ -1,39 +1,33 @@
-
 <div id="booking">
   <% if @cars.empty? %>
-
-  <div class="container" id="new-car-booking">
-    <h2>Add your car:</h2>
-    <%= render 'client/cars/form', car: @car, client: current_user %>
-  </div>
+    <div class="container" id="new-car-booking">
+      <h2>Add your car:</h2>
+      <%= render 'client/cars/form', car: @car, client: current_user %>
+    </div>
   <% else %>
   <div class="container-booking">
     <!-- Add logo and "Which car do you want to wash here?" over here -->
     <% @cars.each do |car| %>
-    <%= render '/shared/small_car_card_photo', car: car %>
+      <%= render '/shared/small_car_card_photo', car: car %>
     <% end %>
-    <div class="center">
-      <button type="button" class="button-opacity btn-modal" id="add-car-booking" data-toggle="modal" data-target=".bs-example-modal-lg">+ Add new Car</button>
-    </div>
-    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-      <div class="modal-dialog modal-lg container hidden" id="new-car-booking" role="document">
-        <div class="modal-content">
-          <%= render 'client/cars/form', car: @car, client: current_user %>
+      <div class="center">
+        <button type="button" class="button-opacity btn-modal" id="add-car-booking" data-toggle="modal" data-target=".bs-example-modal-lg">+ Add new Car</button>
+      </div>
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg container hidden" id="new-car-booking" role="document">
+          <div class="modal-content">
+            <%= render 'client/cars/form', car: @car, client: current_user %>
+          </div>
         </div>
       </div>
-    </div>
   </div>
   <% end %>
   <div class="container">
 <!--     <%= simple_form_for @booking do |f| %>
     <%= f.button :submit %>
     <%= f.error :car %>
-
     <%= f.input :car_id, collection: @cars, as: :radio_buttons %>
     <%= f.hidden_field :address, value: @booking.address %>
     <% end %> -->
   </div>
 </div>
-
-
-
