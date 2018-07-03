@@ -6,7 +6,6 @@
           <%= image_tag(asset_path("logo_carwash02.png"), class: "logo-xl") %>
         </div>
         <div class="login-form-custom">
-
           <div class="form-container">
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-inputs">
@@ -14,7 +13,6 @@
                 <%= f.input :email, label: false, required: false, autofocus: true, placeholder: "Username" %>
               </div>
               <div class="input-sign-up">
-
                 <%= f.input :password, label: false, required: false, placeholder: "Password" %>
               </div>
             </div>
@@ -31,7 +29,6 @@
               <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "button-rounded btn-block text-center" %>
             </div>
           </div>
-
           <div class="aditionals-container">
             <div>
               <p>Don't have an account yet? <%= link_to "Sign Up" , new_user_registration_path %> </p>
@@ -40,17 +37,11 @@
               <p><%= link_to "Forgot password?" , new_user_password_path %> </p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
 <!--
       <div class="center-sign">
         <h2>Logo</h2>
