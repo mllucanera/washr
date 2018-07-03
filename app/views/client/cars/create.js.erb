@@ -33,13 +33,19 @@ if (carIndexView) {
     newCarForm.innerHTML = innerHTML;
   }
 
-  newCar = `<%= @car.name %>`
+  newCar = "<%= j render '/shared/small_car_card_client', car: @car %>"
 
   function addCar(car) {
-    var cars = document.getElementById('new_index');
+    var cars = document.getElementById('car-list');
     cars.insertAdjacentHTML('beforeend', car);
-    var carForm = document.getElementById("new-car-index");
-    carForm.classList.add("hidden");
+
+    // Hide the in_page_form
+    var carForm = document.getElementById("new-car-booking");
+    carForm && carForm.classList.add("hidden");
+
+    // Hide the car_form_modal
+    var modal_close_button = document.querySelector('[data-dismiss=modal]');
+    modal_close_button && modal_close_button.click();
   }
 }
 

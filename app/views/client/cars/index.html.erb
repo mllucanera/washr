@@ -4,21 +4,35 @@
     </div>
     <div class="box-inline-title">
       <p>My cars</p>
-    </div>
-  <div id="index">
-    <div class="container">
-      <%= render 'car_form_modal', car: @car, client: current_user %>
-      <div id="new_index">
+    </div>  
+
+  <div id="car-index-js-handler">
+    <% if @cars.empty? %>
+
+      <div class="container" id="new-car-booking">
+        <h2>Add your car:</h2>
+        <%= render 'client/cars/form', car: @car, client: current_user %>
+      </div>
+
+      <div id="car-list"></div>
+
+    <% else %>
+
+      <div id="car-list">
         <% @cars.each do |car| %>
           <%= render '/shared/small_car_card_client', car: car %>
         <% end %>
-        <div class="center">
-          <button type="button" class="button-opacity btn-modal" id="add-car-index" data-toggle="modal" data-target=".modal">
-            <i class="fas fa-plus-circle"></i>
-            Add new Car
-          </button>
-        </div>
       </div>
-    </div>
+
+      <div class="center">
+        <button type="button" class="button-opacity btn-modal" id="add-car-index" data-toggle="modal" data-target="#car_form_modal">
+          <i class="fas fa-plus-circle"></i> 
+          Add new Car
+        </button>
+      </div>
+
+    <% end %>
   </div>
 </div>
+
+<%= render 'client/cars/car_form_modal', car: @car, client: current_user %>
