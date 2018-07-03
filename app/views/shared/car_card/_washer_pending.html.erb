@@ -1,0 +1,32 @@
+<div id="confirm-view">
+  <div class="box-list">
+    <ul>
+      <li>
+        <i class="fas fa-car"></i>
+        <%= booking.car.brand.capitalize%>
+        <%=booking.car.model.capitalize%> - <%= booking.car.color%>
+      </li>
+      <hr>
+      <li>
+        <i class="fas fa-map-marker-alt"></i>
+        <%=booking.address.capitalize%>
+      </li>
+      <hr>
+      <li>
+        <i class="far fa-clock"></i> 40 minutes</li>
+      </ul>
+    </div>
+    <div class="line">
+      <p>
+        DEADLINE TIME:
+        <%= (booking.created_at + 2400000).strftime("%H:%m") %>
+      </p>
+    </div>
+    <a href="#" class="button-rounded button-position" id="confirm-booking">Confirm</a>
+  </div>
+  <div id="loading" class="hidden">
+    <h1>Loading</h1>
+    <p>We are looking for a Washer</p>
+  </div>
+</div>
+

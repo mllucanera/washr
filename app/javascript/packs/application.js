@@ -1,5 +1,8 @@
 import "bootstrap";
-import { btnGooFunc } from "./btnGoo";
+import { btnGooFunc, inputBlur } from "./btnGoo";
+import { autocomplete } from "../components/autocomplete";
 
 
 btnGooFunc();
+// inputBlur();
+autocomplete();

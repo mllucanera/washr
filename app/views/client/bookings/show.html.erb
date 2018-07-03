@@ -1,13 +1,3 @@
-<%= render '/shared/car_card', booking: @booking %>
-<!--
-<% case @booking.status %>
-  <% when 'washer_pending' %>
-    <p> We are looking for a washer</p>
-  <% when 'washing' %>
-    <p>Your cleaning is in process</p>
-  <% when 'washed' %>
-    <%= link_to "OK", client_booking_path(@booking.id), method: :put, class: "btn btn-success" %>
-  <% when 'completed' %>
-    <%= link_to "Home", root_path, class: "button-rounded" %>
-<% end %>
- -->
+<div class="container">
+  <%= render '/shared/car_card/car_card', booking: @booking %>
+</div>

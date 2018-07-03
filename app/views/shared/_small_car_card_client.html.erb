@@ -1,0 +1,26 @@
+<div class="cards-container">
+  <div class="card-container" id="height-client-box">
+    <div class="card-text-group">
+      <div class="car-title">
+        <h5>Joti's Car</h5>
+      </div>
+      <hr>
+      <div class="car-description-client">
+        <p> <%= car.plate.upcase %></p>
+        <p> <%= car.brand.capitalize %> </p>
+        <p> <%= car.color %></p>
+      </div>
+    </div>
+    <div class="photo-square-sm" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300');">
+    </div>
+  </div>
+  <div class="row-button">
+    <div class="button-pick" id="edit">
+      <%= link_to "Edit", edit_client_car_path(car) %>
+    </div>
+    <div class="button-pick" id="delete">
+      <%= link_to "Delete", client_car_path(car), method: :delete, data: { confirm: "Are you sure?"} %>
+    </div>
+  </div>
+</div>
+</div>

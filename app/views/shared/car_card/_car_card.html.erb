@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="background-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300');">
+  </div>
+  <div class="white-box">
+    <p> <%= booking.car.name.capitalize %> </p>
+  </div>
+  <div class="box-description">
+    <% case booking.status %>
+    <% when 'washer_pending' %>
+    <%= render '/shared/car_card/washer_pending', booking: booking %>
+    <% when 'washing' %>
+    <%= render '/shared/car_card/washing', booking: booking %>
+    <% when 'washed' %>
+    <%= render '/shared/car_card/washed', booking: booking %>
+    <% when 'completed' %>
+    <%= render '/shared/car_card/completed', booking: booking %>
+    <%= link_to "Home", root_path, class: "button-rounded" %>
+    <% end %>
+  </div>
+</div>
+
