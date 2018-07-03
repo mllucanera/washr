@@ -1,0 +1,26 @@
+<div class="cards-container">
+  <div class="card-container">
+    <div class="card-text-group">
+      <div class="car-title">
+        <h5><%= booking.car.name.capitalize %></h5>
+      </div>
+      <div class="car-description">
+        <p> <%= booking.address %></p>
+        <% if current_user.role == "client" %>
+        <p class="spacing" id="mins"> Washed by <%= booking.washer.first_name %> <%= booking.washer.last_name %></p>
+        <% elsif current_user.role == "washer" %>
+        <p class="spacing" id="mins"> <%= booking.car.brand %> <%= booking.car.model %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="right-description">
+      <p> <%= booking.created_at.strftime("%m/%d/%Y") %> </p>
+      <p id="price" class="spacing"> $260 </p>
+    </div>
+  </div>
+  <div class="row-button">
+    <div class="button-pick">
+      <%= link_to "More information", booking_path(booking.id)%>
+    </div>
+  </div>
+</div>
