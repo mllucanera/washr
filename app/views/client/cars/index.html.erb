@@ -1,9 +1,4 @@
-<div id="index">
   <div class="container">
-    <%= link_to root_path do %>
-      <i class="fas fa-arrow-left"></i>
-    <% end %>
-
     <%= render 'car_form_modal', car: @car, client: current_user %>
 
     <div id="new_index">
@@ -16,6 +11,6 @@
           Add new Car
         </button>
       </div>
+
     </div>
   </div>
-</div>
