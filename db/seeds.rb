@@ -86,6 +86,7 @@ end
 end
 
 puts "Creating bookings"
+
 first_booking = Booking.create!(address: "Av. Libertador 4673", car: Car.first, status: 0)
 second_booking = Booking.create!(address: "Ecuador 1458", car: Car.fifth, status: 3)
 third_booking = Booking.create!(address: "San Martin de Tours 3307", car: Car.third, status: 2)
