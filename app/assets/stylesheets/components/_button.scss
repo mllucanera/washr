@@ -49,3 +49,25 @@
   border: none;
   outline: none;
 }
+
+// SQUARE SIMIL BUTTON
+.box-inline-white {
+  margin: auto;
+  margin-bottom: 40px;
+  padding: 5px;
+  width: 250px;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  // background-color: rgba(128, 208, 199, 0.4);
+  color: white;
+  text-align: center;
+  p {
+    margin: auto;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}
