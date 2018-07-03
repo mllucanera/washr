@@ -86,8 +86,8 @@ end
 end
 
 puts "Creating bookings"
-first_booking = Booking.create!(address: "La Plata, Buenos Aires Province, Argentina", car: Car.first, status: 0)
-second_booking = Booking.create!(address: "Palermo, Buenos Aires, Argentina", car: Car.fifth, status: 3)
-third_booking = Booking.create!(address: "Buenos Aires, Firmat, Santa Fe Province, Argentina", car: Car.third, status: 2)
+first_booking = Booking.create!(address: "La Plata", car: Car.first, status: 0)
+second_booking = Booking.create!(address: "Palermo", car: Car.fifth, status: 3)
+third_booking = Booking.create!(address: "Buenos Aires", car: Car.third, status: 2)
 
 puts "Finished seeding process. Seeds Created"

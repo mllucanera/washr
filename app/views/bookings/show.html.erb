@@ -1,16 +1,68 @@
-<h1>Bookings#show</h1>
-<br>
-<p>Car: <%= @booking.car.brand %></p>
+<div class="container">
 
+  <div class="background-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300');">
+  </div>
 
-<% if @booking.status == "washer_pending" %>
-  <p> Status: <%= @booking.status%> </p>
-  <%= link_to "pick", booking_path(@booking.id), method: :put, data: { confirm: "Are you sure you want to pick this wash?"}, class: "btn btn-success" %>
-<% elsif @booking.washer == current_user && @booking.status == 'washing' %>
-  <%= link_to "mark as completed", completed_path(@booking.id), method: :put, data: { confirm: "Are you sure you completed the task?"}, class: "btn btn-success" %>
-<% else %>
-<%= link_to 'more requests', bookings_path, class: "btn btn-success"%>
-<% end %>
+  <div class="white-box">
+    <p> <%= @booking.car.plate.capitalize %> </p>
+  </div>
 
+  <% if @booking.status == "washer_pending" %>
+  <div class="box-description">
+    <ul>
+      <li>
+        <i class="fas fa-car"></i>
+        <%= @booking.car.brand.capitalize %> <%= @booking.car.model.capitalize %> - <%= @booking.car.color.capitalize %>
+      </li>
+      <div class="line"></div>
+      <li>
+        <i class="fas fa-map-marker-alt"></i>
+        <%=@booking.address.capitalize%>
+      </li>
+      <div class="line"></div>
+      <li>
+        <i class="far fa-clock"></i>
+        <% time = (Time.now - @booking.created_at).to_i %><%= time %> min ago
+      </li>
+    </ul>
+    <div class="line"></div>
+    <p>
+      DEADLINE TIME:
+      <%= (@booking.created_at + 2400000).strftime("%H:%m") %>
+    </p>
+  </div>
+  <%= link_to "CONFIRM", booking_path(@booking.id), method: :put, data: { confirm: "Are you sure you want to pick this wash?"}, class: "button-rounded button-position center" %>
 
+  <% elsif @booking.status == "washing" %>
+  <div class="box-description">
 
+  <img src="" alt="">
+  <p>xx</p>
+    <hr>
+    <p>Yay!</p>
+    <p>You will earn $260!</p>
+    <div class="line"></div>
+    <p>
+      DEADLINE TIME:
+      <%= (@booking.created_at + 2400000).strftime("%H:%m") %>
+    </p>
+  </div>
+  <%= link_to "MARK AS COMPLETED", completed_path(@booking.id), method: :put, data: { confirm: "Are you sure you completed the task?"}, class: "button-rounded button-position center" %>
+
+  <% else %>
+  <div class="box-description">
+
+  <img src="" alt="">
+  <p>xx</p>
+    <hr>
+    <p>Congratulations!</p>
+    <p>You completed the wash right on time!</p>
+    <p>Spread happiness</p>
+  </div>
+
+  <%= link_to 'PICK MORE WASHES', @bookings_path, class: "button-rounded button-position center" %>
+  <%= link_to 'VIEW WASHES HISTORY', washer_bookings_path, class: "button-rounded button-position center" %>
+
+  <% end %>
+
+</div>
