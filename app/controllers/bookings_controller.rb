@@ -25,6 +25,7 @@ class BookingsController < ApplicationController
   end
 
   def index
+    @location = request.location
     @booking = current_user.bookings.last
     case current_user.role
     when "client"
@@ -59,9 +60,9 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
     @completed = Booking.where(status: 'completed').where(user_id: current_user.id)
   end
-  
+
   private
-  
+
   def set_booking
     @booking = Booking.find(params[:id])
   end

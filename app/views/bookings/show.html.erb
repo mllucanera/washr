@@ -5,7 +5,7 @@
     </div>
 
     <div class="white-box">
-      <p> <%= @booking.car.plate.capitalize %> </p>
+      <p> <%= @booking.car.plate.upcase %> </p>
     </div>
 
     <% if @booking.status == "washer_pending" %>
@@ -15,18 +15,18 @@
           <i class="fas fa-car"></i>
           <%= @booking.car.brand.capitalize %> <%= @booking.car.model.capitalize %> - <%= @booking.car.color.capitalize %>
         </li>
-        <div class="line"></div>
+        <hr>
         <li>
           <i class="fas fa-map-marker-alt"></i>
           <%=@booking.address.capitalize%>
         </li>
-        <div class="line"></div>
+        <hr>
         <li>
           <i class="far fa-clock"></i>
-          <% time = (Time.now - @booking.created_at).to_i %><%= time %> min ago
+          <%= ((Time.now - @booking.created_at)/60).round(0) %> min ago
         </li>
       </ul>
-      <div class="line"></div>
+      <hr>
       <p>
         DEADLINE TIME:
         <%= (@booking.created_at + 2400000).strftime("%H:%m") %>
@@ -37,8 +37,9 @@
     <% elsif @booking.status == "washing" %>
     <div class="box-description">
 
-      <img src="" alt="">
-      <p>xx</p>
+      <div>
+        <img src="<%= asset_url('money.png') %>" alt="" class="icon-box-title">
+      </div>
       <hr>
       <p>Yay!</p>
       <p>You will earn $260!</p>
@@ -52,9 +53,9 @@
 
     <% else %>
     <div class="box-description">
-
-      <img src="" alt="">
-      <p>xx</p>
+      <div>
+        <img src="<%= asset_url('money.png') %>" alt="" class="icon-box-title">
+      </div>
       <hr>
       <p>Congratulations!</p>
       <p>You completed the wash right on time!</p>
