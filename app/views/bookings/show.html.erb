@@ -10,7 +10,7 @@
     </div>
 
     <!-- STATUS 'WASHER_PENDING' -->
-    <div id="washer_pending-box">
+    <div id="washer_pending-box" class="<%= 'hidden' unless @booking.status == 'washer_pending' %>">
       <div class="box-description">
         <ul>
           <li>
@@ -38,7 +38,7 @@
     </div>
 
     <!-- STATUS 'WASHING' -->
-    <div id="washing-box" class="hidden">
+    <div id="washing-box" class="<%= 'hidden' unless @booking.status == 'washing' %>">
       <div class="box-description">
 
         <div>
@@ -57,7 +57,7 @@
     </div>
 
     <!-- STATUS 'WASHED' -->
-    <div id="washed-box" class="hidden">
+    <div id="washed-box" class="<%= 'hidden' unless @booking.status == 'washed' %>">
       <div class="box-description">
         <div>
           <img src="<%= asset_url('money.png') %>" alt="" class="icon-box-title">
