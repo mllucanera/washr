@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
-
-  before_action :set_booking, only: [:show, :destroy, :update]
+  before_action :set_booking, only: [:show, :destroy, :update, :mark_as_washing, :mark_as_washed]
 
   def new
     @booking = Booking.new
@@ -49,6 +48,37 @@ class BookingsController < ApplicationController
     redirect_to booking_path(@booking.id)
   end
 
+  def mark_as_washing
+    @booking.washer = current_user
+    @booking.status = 1
+    if @booking.save
+      respond_to do |format|
+        format.html { redirect_to booking_path(@booking.id) }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render 'bookings/show' }
+        format.js  # <-- idem
+      end
+    end
+  end
+
+  def mark_as_washed
+    @booking.washer = current_user
+    @booking.status = 2
+    if @booking.save
+      respond_to do |format|
+        format.html { redirect_to booking_path(@booking.id) }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render 'bookings/show' }
+        format.js  # <-- idem
+      end
+    end
+  end
   def completed
     @booking = Booking.find(params[:id])
     @booking.status = 2
