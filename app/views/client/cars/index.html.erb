@@ -1,36 +1,28 @@
-<div class="wrapper">
-  <div class="icon-box-title">
-    <img src="<%= asset_url('car.png') %>" alt="" class="icon-box-title">
-  </div>
-  <div class="box-inline-title">
-    <p>My cars</p>
-  </div>
- <div id="index">
-   <div class="container">
-    <div class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-            <h4 class="modal-title" style="color: black;">Add New Car</h4>
-          </div>
-          <div class="modal-body">
-            <%= render 'form', car: @car, client: current_user %>
-          </div>
+  <div class="wrapper">
+    <div class="icon-box-title">
+      <img src="<%= asset_url('car.png') %>" alt="" class="icon-box-title">
+    </div>
+    <div class="box-inline-title">
+      <p>My cars</p>
+    </div>  
+
+  <div id="index">
+    <div class="container">
+
+      <%= render 'car_form_modal', car: @car, client: current_user %>
+
+      <div id="new_index">
+        <% @cars.each do |car| %>
+          <%= render '/shared/small_car_card_client', car: car %>
+        <% end %>
+
+        <div class="center">
+          <button type="button" class="button-opacity btn-modal" id="add-car-index" data-toggle="modal" data-target=".modal">
+            <i class="fas fa-plus-circle"></i> 
+            Add new Car
+          </button>
         </div>
       </div>
     </div>
-    <div id="new_index">
-      <% @cars.each do |car| %>
-        <%= render '/shared/small_car_card_client', car: car %>
-      <% end %>
-      <div class="center">
-        <button type="button" class="button-opacity btn-modal" id="add-car-booking" data-toggle="modal" data-target=".modal">
-          <img src="<%= asset_url('add.png')%>" alt="" class="icon-small">
-          Add new car
-        </button>
-      </div>
-    </div>
   </div>
-</div>
 </div>
