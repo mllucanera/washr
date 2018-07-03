@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :washer_profiles, only: [:new, :create]
 
   get '/profile', to: 'profiles#show', as: 'profile'
+  get '/bookings/mark_as_washing', to: 'bookings#mark_as_washing'
+  get '/bookings/mark_as_washed', to: 'bookings#mark_as_washed'
 
   # client routes
   resources :bookings, only: [:new, :create]

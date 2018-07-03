@@ -9,65 +9,66 @@
       <p> <%= @booking.car.plate.upcase %> </p>
     </div>
 
-    <% if @booking.status == "washer_pending" %>
-    <div class="box-description">
-      <ul>
-        <li>
-          <i class="fas fa-car"></i>
-          <%= @booking.car.brand.capitalize %> <%= @booking.car.model.capitalize %> - <%= @booking.car.color.capitalize %>
-        </li>
+    <!-- STATUS 'WASHER_PENDING' -->
+    <div id="washer_pending-box" class="<%= 'hidden' unless @booking.status == 'washer_pending' %>">
+      <div class="box-description">
+        <ul>
+          <li>
+            <i class="fas fa-car"></i>
+            <%= @booking.car.brand.capitalize %> <%= @booking.car.model.capitalize %> - <%= @booking.car.color.capitalize %>
+          </li>
+          <hr>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <%=@booking.address.capitalize%>
+          </li>
+          <hr>
+          <li>
+            <i class="far fa-clock"></i>
+            <%= ((Time.now - @booking.created_at)/60).round(0) %> min ago
+          </li>
+        </ul>
         <hr>
-        <li>
-          <i class="fas fa-map-marker-alt"></i>
-          <%=@booking.address.capitalize%>
-        </li>
+        <p>
+          DEADLINE TIME:
+          <%= (@booking.created_at + 2400000).strftime("%H:%m") %>
+        </p>
+      </div>
+      <%= link_to "CONFIRM", { controller: "bookings", action: "mark_as_washing", id: @booking.id, remote: true}, data: { confirm: "Are you sure you want to pick this wash?"}, class: "button-rounded button-position center" %>
+    </div>
+
+    <!-- STATUS 'WASHING' -->
+    <div id="washing-box" class="<%= 'hidden' unless @booking.status == 'washing' %>">
+      <div class="box-description">
+
+        <div>
+          <img src="<%= asset_url('money.png') %>" alt="" class="icon-box-title">
+        </div>
         <hr>
-        <li>
-          <i class="far fa-clock"></i>
-          <%= ((Time.now - @booking.created_at)/60).round(0) %> min ago
-        </li>
-      </ul>
-      <hr>
-      <p>
-        DEADLINE TIME:
-        <%= (@booking.created_at + 2400000).strftime("%H:%m") %>
-      </p>
-    </div>
-    <%= link_to "CONFIRM", booking_path(@booking.id), method: :put, data: { confirm: "Are you sure you want to pick this wash?"}, class: "button-rounded button-position center" %>
-
-    <% elsif @booking.status == "washing" %>
-    <div class="box-description">
-
-      <div>
-        <img src="<%= asset_url('money.png') %>" alt="" class="icon-box-title">
+        <p>Yay!</p>
+        <p>You will earn $260!</p>
+        <div class="line"></div>
+        <p>
+          DEADLINE TIME:
+          <%= (@booking.created_at + 2400000).strftime("%H:%m") %>
+        </p>
       </div>
-      <hr>
-      <p>Yay!</p>
-      <p>You will earn $260!</p>
-      <div class="line"></div>
-      <p>
-        DEADLINE TIME:
-        <%= (@booking.created_at + 2400000).strftime("%H:%m") %>
-      </p>
+      <%= link_to "MARK AS COMPLETED",{ controller: "bookings", action: "mark_as_washed", id: @booking.id, remote: true}, data: { confirm: "Are you sure you completed the task?"}, class: "button-rounded button-position center" %>
     </div>
-    <%= link_to "MARK AS COMPLETED", completed_path(@booking.id), method: :put, data: { confirm: "Are you sure you completed the task?"}, class: "button-rounded button-position center" %>
 
-    <% else %>
-    <div class="box-description">
-      <div>
-        <img src="<%= asset_url('money.png') %>" alt="" class="icon-box-title">
+    <!-- STATUS 'WASHED' -->
+    <div id="washed-box" class="<%= 'hidden' unless @booking.status == 'washed' %>">
+      <div class="box-description">
+        <div>
+          <img src="<%= asset_url('money.png') %>" alt="" class="icon-box-title">
+        </div>
+        <hr>
+        <p>Congratulations!</p>
+        <p>You completed the wash right on time!</p>
+        <p>Spread happiness</p>
       </div>
-      <hr>
-      <p>Congratulations!</p>
-      <p>You completed the wash right on time!</p>
-      <p>Spread happiness</p>
+      <%= link_to 'PICK MORE WASHES', bookings_path, class: "button-rounded button-position center" %>
+      <%= link_to 'VIEW WASHES HISTORY', washer_bookings_path, class: "button-rounded button-position center" %>
     </div>
-
-    <%= link_to 'PICK MORE WASHES', @bookings_path, class: "button-rounded button-position center" %>
-    <%= link_to 'VIEW WASHES HISTORY', washer_bookings_path, class: "button-rounded button-position center" %>
-
-    <% end %>
-
   </div>
-
 </div>
