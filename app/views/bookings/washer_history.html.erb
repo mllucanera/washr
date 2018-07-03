@@ -1,0 +1,14 @@
+<!-- Logo and "My Services History" -->
+
+
+
+<button class="button-rounded">TOTAL EARNED: <%= @completed.size * 260 %>$</button>
+<% @bookings.each do |booking| %>
+    <%#= render '/shared/PARTIAL_FILE_NAME_THAT_YOU_MAKE' booking: booking %>
+
+<% end %>
+<%= link_to "+ New wash", root_path, class: "button-opacity center" %>
+
+
+
+
