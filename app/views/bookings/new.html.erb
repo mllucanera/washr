@@ -3,7 +3,9 @@
   <% if @cars.empty? %>
   <div class="container" id="new-car-booking">
     <h2>Add your car:</h2>
-    <%= render 'client/cars/form', car: @car, client: current_user %>
+    <div class="login-form-custom">
+      <%= render 'client/cars/form', car: @car, client: current_user %>
+    </div>
   </div>
 
   <% else %>
