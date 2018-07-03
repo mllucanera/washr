@@ -3,5 +3,5 @@
 <% @current_user_bookings.each do |b| %>
 <p><%= b.id %></p>
 <p><%= b.car.brand %></p>
-<p><%= b.washer.email %></p>
+<p><%= b.washer.email if b.washer %></p>
 <% end %>

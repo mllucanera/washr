@@ -1,26 +1,27 @@
- <%= simple_form_for([current_user, @car], remote: true, url: client_cars_path) do |f| %>
-  <%= f.error_notification %>
-  <p>
-    <%= f.input :name, label: false, placeholder: "Name" %>
-  </p>
-    <%= f.input :color, label: false, placeholder: "Color" %>
-  <p>
-    <%= f.input :model, label: false, placeholder: "Model" %>
-  </p>
-  <p>
-    <%= f.input :brand, label: false, placeholder: "Brand" %>
-  </p>
-  <p>
-    <%= f.input :plate, label: false, placeholder: "Plate" %>
-  </p>
-  <p>
-    <%= f.input :photo, label: false %>
-  </p>
+<div class="modal-form-container">
+  <%= simple_form_for([current_user, @car], remote: true, url: client_cars_path) do |f| %>
+    <%= f.error_notification %>
+    <p>
+      <%= f.input :name, label: false, placeholder: "Name" %>
+    </p>
+      <%= f.input :color, label: false, placeholder: "Color" %>
+    <p>
+      <%= f.input :model, label: false, placeholder: "Model" %>
+    </p>
+    <p>
+      <%= f.input :brand, label: false, placeholder: "Brand" %>
+    </p>
+    <p>
+      <%= f.input :plate, label: false, placeholder: "Plate" %>
+    </p>
+    <p>
+      <%= f.input :photo, label: false %>
+    </p>
 
-  <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :photo_cache, as: :hidden %>
 
-
-  <p> <%= f.submit class: "btn btn-primary button-rounded", id: "form-submit" %>
-
-  </p>
-<% end %>
+    <p>
+      <%= f.submit class: "btn btn-primary button-rounded", id: "form-submit" %>
+    </p>
+  <% end %>
+</div>
