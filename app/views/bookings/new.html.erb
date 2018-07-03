@@ -12,17 +12,14 @@
         <h2>Add your car:</h2>
         <%= render 'client/cars/form', car: @car, client: current_user %>
       </div>
-     <% else %>
+    <% else %>
       <div class="center">
-        <button type="button" class="button-opacity btn-modal" id="add-car-booking" data-toggle="modal" data-target=".bs-example-modal-lg"><img src="<%= asset_url('add.png') %>" alt="" class="icon-small"> Add new Car</button>
+        <button type="button" class="button-opacity btn-modal" id="add-car-index" data-toggle="modal" data-target=".modal">
+          <i class="fas fa-plus-circle"></i> 
+          Add new Car
+        </button>
       </div>
-      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-        <div class="modal-dialog modal-lg container hidden" id="new-car-booking" role="document">
-          <div class="modal-content">
-           <%= render 'client/cars/form', car: @car, client: current_user %>
-          </div>
-        </div>
-       </div>
+      <%= render 'client/cars/car_form_modal', car: @car, client: current_user %>
      <% end %>
       <div class="container">
   <!--  <%= simple_form_for @booking do |f| %>
@@ -34,4 +31,3 @@
       </div>
     </div>
   </div>
-</div>
