@@ -57,6 +57,8 @@ class BookingsController < ApplicationController
   end
 
   def washer_history
+    @bookings = current_user.bookings
+    @completed = Booking.where(status: 'completed').where(user_id: current_user.id)
   end
 
   private
