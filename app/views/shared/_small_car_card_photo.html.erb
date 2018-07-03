@@ -12,7 +12,7 @@
         <p>  <%= car.color %></p>
       </div>
     </div>
-    <div class="photo-square-sm" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300');">
+    <div class="photo-square-sm" style="background-image: url('<%= cl_image_path car.photo %>');">
     </div>
   </div>
 
