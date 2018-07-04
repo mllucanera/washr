@@ -3,7 +3,7 @@
 
 <div class="container">
   <% @bookings.each do |booking| %>
-  <%= render '/shared/small_car_card', booking: booking %>
+  <%= render '/shared/small_car_card', booking: booking, location: @location %>
   <% end %>
 </div>
 
