@@ -37,7 +37,7 @@ c = 0
   # Create client
   client = User.new(client_data)
   client.save
-  client.remote_photo_url = "https://res.cloudinary.com/logicisaliar/image/upload/v1530547670/user#{t + 1}.jpg"
+  client.remote_photo_url = "https://res.cloudinary.com/logicisaliar/image/upload/a_0/v1530547670/user#{t + 1}.jpg"
 
   client.save
   t += 1
@@ -80,7 +80,7 @@ end
   # Create client
   washer = User.new(washer_data)
   washer.save
-  washer.remote_photo_url = "https://res.cloudinary.com/logicisaliar/image/upload/v1530545192/washer#{t + 1}.jpg"
+  washer.remote_photo_url = "https://res.cloudinary.com/logicisaliar/image/upload/a_0/v1530545192/washer#{t + 1}.jpg"
   washer.save
   t += 1
 end
