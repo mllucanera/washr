@@ -1,16 +1,19 @@
+<p>
+  <span id="banner-typed-text">THIS IS HERE.</span>
+</p>
 <div id="map" class="map-home-input-empty" data-markers="<%= @markers.to_json %>"></div>
 
 <div class="container-address">
   <div id="address-input-box">
     <%= form_tag root_path, method: :get do %>
-      <%= text_field_tag :address,
-      params[:address],
-      class: "form-control", id: "address-input",
+    <%= text_field_tag :address,
+    params[:address],
+    class: "form-control", id: "address-input",
       placeholder: "Enter address"
       %>
-    <% end %>
+      <% end %>
+    </div>
+    <div id="btn-goo-wrapper" class="hidden">
+      <%= link_to "CONFIRM", new_booking_path(address: params[:address]), id: "btn-goo"%>
+    </div>
   </div>
-  <div id="btn-goo-wrapper" class="hidden">
-    <%= link_to "CONFIRM", new_booking_path(address: params[:address]), id: "btn-goo"%>
-  </div>
-</div>
