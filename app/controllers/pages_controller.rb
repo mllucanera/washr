@@ -52,7 +52,7 @@ class PagesController < ApplicationController
     [{
       lat: res.first.coordinates[0],
       lng: res.first.coordinates[1],
-      icon: 'https://res.cloudinary.com/sebastianbuffosempe/image/upload/v1530708783/logo_yc7hdt.png'
+      icon: 'https://res.cloudinary.com/jotisempe/image/upload/v1530712696/map-icon.png'
     }]
   end
 
