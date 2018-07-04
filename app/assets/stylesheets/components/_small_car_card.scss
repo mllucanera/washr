@@ -140,7 +140,7 @@ hr {
 
 // SELECTION OF OWNED CARS FOR CLIENT
 
-#edges-rounded {
+.edges-rounded {
   border-radius: 6px;
   height: 120px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -154,4 +154,32 @@ hr {
 .spacing {
 position: relative;
 top: 15px;
+}
+
+// CARD SELECTOR
+
+.card_selected {
+  outline: 3px solid blue;
+}
+
+.car-select-btn {
+  color: white;
+  background-color: blue;
+  height: 40px;
+  width: 40px;
+  transform: translate(151px, -81px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  .fas {
+    color: white;
+    margin-left: 5px;
+    font-size: 1.4em;
+  }
+}
+
+.hide_button {
+  opacity: 0;
 }

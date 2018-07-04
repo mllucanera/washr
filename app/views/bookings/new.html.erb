@@ -36,12 +36,11 @@
 
     <div class="container">
 
-<!--  <%= simple_form_for @booking do |f| %>
-        <%= f.button :submit %>
-        <%= f.error :car %>
-        <%= f.input :car_id, collection: @cars, as: :radio_buttons %>
-        <%= f.hidden_field :address, value: @booking.address %>
-      <% end %> -->
+      <%= form_with model: @booking, id: :new_booking_form, class: :hidden do |f| %>
+        <%= f.text_field :car_id, id: :car_id %>
+        <%= f.text_field :address, value: params[:address] %>
+        <%= f.submit 'submit', id: :submit_booking %>
+      <% end %>
 
     </div>
   </div>
