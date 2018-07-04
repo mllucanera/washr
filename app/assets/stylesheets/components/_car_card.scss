@@ -98,3 +98,13 @@ hr {
     font-size: 20px;
   }
 }
+
+.loading-symbol {
+  border: 8px dashed #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px dashed #555;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 5s linear infinite;
+}
