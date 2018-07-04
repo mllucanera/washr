@@ -6,12 +6,7 @@ class Client::BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
-    @current_user_bookings = []
-    @bookings.each do |b|
-      if b.client == current_user
-        @current_user_bookings << b
-      end
-    end
+    @current_user_bookings = Booking.where(client: current_user)
   end
 
   def update
