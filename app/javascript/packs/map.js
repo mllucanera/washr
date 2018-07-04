@@ -220,7 +220,7 @@ map.setStyle("map_style");
 const markers = JSON.parse(mapElement.dataset.markers);
 if (markers.length === 1) {
   map.setCenter(markers[0].lat, markers[0].lng);
-  map.setZoom(18);
+  map.setZoom(19);
   map.addMarkers(markers);
 }
 else {
@@ -228,12 +228,12 @@ else {
     var lat = location.coords.latitude;
     var lng = location.coords.longitude;
     map.setCenter(lat, lng);
-    map.setZoom(15);
+    map.setZoom(19);
     var marker = new google.maps.Marker({
       position: {lat: lat, lng: lng},
       map: map,
       title: 'Your car is here.',
-      icon: 'http://res.cloudinary.com/sebastianbuffosempe/image/upload/v1530630810/white_vbvbjz.png'
+      icon: 'https://res.cloudinary.com/sebastianbuffosempe/image/upload/v1530708783/logo_yc7hdt.png'
     });
     map.addMarker(marker);
   })
