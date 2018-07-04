@@ -24,6 +24,14 @@
         </li>
         <hr>
         <li>
+          <i class="fas fa-map-marker-alt"></i>
+        </li>
+        <% if @nro_bookings = [] %>
+        <p>You don't have any washes yet</p>
+        <% else %>
+          <%= @nro_bookings.last  %>
+          <% end %>
+        <li>
           <i class="far fa-clock"></i> 40 minutes</li>
         </ul>
 <!--       <div class="line">
