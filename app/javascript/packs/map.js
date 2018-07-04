@@ -220,7 +220,7 @@ map.setStyle("map_style");
 const markers = JSON.parse(mapElement.dataset.markers);
 if (markers.length === 1) {
   map.setCenter(markers[0].lat, markers[0].lng);
-  map.setZoom(19);
+  map.setZoom(18);
   map.addMarkers(markers);
 }
 else {
@@ -228,7 +228,7 @@ else {
     var lat = location.coords.latitude;
     var lng = location.coords.longitude;
     map.setCenter(lat, lng);
-    map.setZoom(19);
+    map.setZoom(18);
     var marker = new google.maps.Marker({
       position: {lat: lat, lng: lng},
       map: map,
