@@ -15,7 +15,9 @@ class PagesController < ApplicationController
     if current_user.cars.empty?
       mapper
     else
-      booking = current_user.bookings.where.not(status: 'completed').first
+      bookings = []
+      current_user.cars.map { |car| (bookings << car.bookings.where.not(status: 'completed').last) unless car.bookings.empty? }
+      booking = bookings.last
       if booking
         redirect_to client_booking_path(booking)
       else
