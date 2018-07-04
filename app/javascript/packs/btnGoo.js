@@ -1,13 +1,13 @@
 const addressInput = document.getElementById("address-input")
 
-if (addressInput.value) {
+if (addressInput && addressInput.value) {
   changeHeight()
-  console.log("in")
 }
 
 const btnGooFunc = () => {
-  //const addressInput = document.getElementById("address-input")
-  addressInput.addEventListener('input', changeHeight)
+  if (addressInput) {
+    addressInput.addEventListener('input', changeHeight)
+  }
 }
 
 function changeHeight() {
