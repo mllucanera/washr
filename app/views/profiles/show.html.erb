@@ -2,13 +2,20 @@
       <h1><strong><%= @role.capitalize %></strong> profile:</h1>
       <div>
       <%= cl_image_tag @user.photo, height: 150, width: 150, crop: :fill, class: "center" %>
-        <p>Member since - <strong><%= @user_since %></strong> days.</p>
+        <br><br>
+        <p>Member since - <strong><%= @user_since %></strong> day(s).</p>
         <% if @role = "client" %>
-        <p>Cars - <strong><%= @user_cars.count %></strong> cars.</p>
+        <p>Cars - <strong><%= @user_cars.count %></strong> car(s).</p>
         <% end %>
         <p>Bookings - <strong><%= @user_bookings %></strong> bookings.</p>
         <p>Last booking - <strong><%= @last_booking %></strong></p>
+
+        <br><br><br>
+
+        <p>Logged in as - <strong><%= @user.email %></strong></p>
       </div>
+
+
 
     </div>
 
