@@ -231,9 +231,9 @@ else {
     map.setZoom(15);
     var marker = new google.maps.Marker({
       position: {lat: lat, lng: lng},
-      map: map,
+      setMap: map,
       title: 'Your car is here.',
-      icon: 'http://res.cloudinary.com/sebastianbuffosempe/image/upload/v1530630810/white_vbvbjz.png'
+      icon: 'https://res.cloudinary.com/sebastianbuffosempe/image/upload/v1530630810/white_vbvbjz.png'
     });
     map.addMarker(marker);
   })
