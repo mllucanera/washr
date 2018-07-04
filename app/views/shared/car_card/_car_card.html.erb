@@ -5,17 +5,20 @@
       <p> <%= booking.car.name.capitalize %> </p>
     </div>
     <div class="box-description">
-      <% case booking.status %>
-      <% when 'washer_pending' %>
-      <%= render '/shared/car_card/washer_pending', booking: booking %>
-      <% when 'washing' %>
-      <%= render '/shared/car_card/washing', booking: booking %>
-      <% when 'washed' %>
-      <%= render '/shared/car_card/washed', booking: booking %>
-      <% when 'completed' %>
-      <%= render '/shared/car_card/completed', booking: booking %>
-      <%= link_to "Home", root_path, class: "button-rounded" %>
+      <% unless created %>
+        <%= render '/shared/car_card/confirm', booking: booking %>
+      <% else %>
+        <% case booking.status %>
+        <% when 'washer_pending' %>
+        <%= render '/shared/car_card/washer_pending', booking: booking %>
+        <% when 'washing' %>
+        <%= render '/shared/car_card/washing', booking: booking %>
+        <% when 'washed' %>
+        <%= render '/shared/car_card/washed', booking: booking %>
+        <% when 'completed' %>
+        <%= render '/shared/car_card/completed', booking: booking %>
+        <%= link_to "Home", root_path, class: "button-rounded" %>
+        <% end %>
       <% end %>
     </div>
   </div>
-
