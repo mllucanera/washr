@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="right-description">
-      <p> <%= @location.latitude %> kms </p>
+      <p> <%= booking.distance_from([@location.latitude, @location.longitude]).round(0) %> kms </p>
       <p class="dark-blue-light-italic"> Palermo </p>
       <p id="price"> $260 </p>
     </div>
