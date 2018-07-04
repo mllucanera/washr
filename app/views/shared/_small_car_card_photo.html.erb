@@ -1,5 +1,5 @@
 <div class="cards-container">
-  <div class="card-container" id="edges-rounded">
+  <div class="card-container edges-rounded car-js-handler" id="<%= car.id %>">
     <div class="card-text-group">
       <div class="car-title">
         <h5><%= car.name %></h5>
@@ -12,5 +12,8 @@
       </div>
     </div>
     <div class="photo-square-xs" style="background-image: url('<%= car.photo_url %>');"></div>
+  </div>
+  <div class="car-select-btn hide_button">
+    <i class="fas fa-angle-right"></i> 
   </div>
 </div>

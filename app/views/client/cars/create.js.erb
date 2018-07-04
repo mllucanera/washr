@@ -4,6 +4,35 @@ var carIndexView = document.getElementById("car-index-js-handler");
 var newCar = "";
 var newCarBooking = null;
 
+const selectCar = () => {
+  const cars = document.querySelectorAll(".car-js-handler")
+  const selectBtns = document.querySelectorAll(".car-select-btn")
+
+  const input = document.getElementById("car_id")
+  const newBookingForm = document.getElementById("new_booking_form")
+
+  selectBtns.forEach(selectBtn => {
+    selectBtn.addEventListener('click', () => {
+      newBookingForm.submit()
+      console.log('click');
+    })
+  })
+
+  cars.forEach(car => {
+    let selectBtn = car.parentNode.querySelector(".car-select-btn")
+
+    car.addEventListener('click', () => {
+      cars.forEach(i => i.classList.remove("card_selected"))
+      selectBtns.forEach(i => i.classList.add("hide_button"))
+
+      input.value = car.id
+
+      car.classList.add("card_selected")
+      selectBtn.classList.remove("hide_button")
+    })
+  })
+}
+
 if (bookingNewView) {
   function refreshForm(innerHTML) {
     var newCarForm = document.getElementById("new-car-booking");
@@ -15,6 +44,7 @@ if (bookingNewView) {
   function addCar(car) {
     var cars = document.getElementById('car-list');
     cars.insertAdjacentHTML('beforeend', car);
+
     
     // Hide the in_page_form
     var carForm = document.getElementById("new-car-booking");
@@ -23,6 +53,8 @@ if (bookingNewView) {
     // Hide the car_form_modal
     var modal_close_button = document.querySelector('[data-dismiss=modal]');
     modal_close_button && modal_close_button.click();
+    
+    selectCar();
   }
 }
 
