@@ -28,6 +28,10 @@ class Client::CarsController < ApplicationController
     @car = Car.new
   end
 
+  def edit
+  end
+
+
   def update
     @car = Car.update(car_params)
     redirect_to client_cars_path

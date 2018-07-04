@@ -1,28 +1,41 @@
 <div class="container">
- <%= simple_form_for([:client, @car]) do |f| %>
-  <%= f.error_notification %>
-  <p>
-    <%= f.input :name %>
-  </p>
+  <%= simple_form_for([:client, @car]) do |f| %>
+    <%= f.error_notification %>
 
-  <br>
-    <%= f.color_field :color %>
-  <br>
-  <br>
-  <p>
-    <%= f.input :model %>
-  </p>
-  <p>
-    <%= f.input :brand %>
-  </p>
-  <p>
-    <%= f.input :plate %>
-  </p>
-  <p>
-    <%= f.input :photo %>
-  </p>
-  <%= f.input :photo_cache, as: :hidden %>
-  <p> <%= f.submit :class => 'btn btn-primary' %>
-  </p>
-<% end %>
+    <div class="form-inputs">
+      <div class="input-sign-up">
+        <%= f.input :name, label: false, placeholder: "Name (Mama's car)" %>
+      </div>
+
+      <div class="input-sign-up">
+        <%= f.input :color, label: false, placeholder: "Color (Black)" %>
+      </div>
+
+      <div class="input-sign-up">
+        <%= f.input :model, label: false, placeholder: "Model (206)" %>
+      </div>
+
+      <div class="input-sign-up">
+        <%= f.input :brand, label: false, placeholder: "Brand (Peugot)" %>
+      </div>
+
+      <div class="input-sign-up">
+        <%= f.input :plate, label: false, placeholder: "Plate (GKS125)" %>
+      </div>
+
+      <div style="display: none;">
+        <%= f.input :photo, label: false %>
+      </div>
+
+      <div>
+        <div class="icon-position" onclick="document.getElementById('car_photo').click();">
+          <i class="fas fa-camera"></i>
+          <p>Upload picture</p>
+        </div>
+      </div>
+
+    </div>
+    <%= f.input :photo_cache, as: :hidden %>
+    <p><%= f.submit class: "button-rounded width-100 btn-modal", id: "form-submit" %></p>
+  <% end %>
 </div>

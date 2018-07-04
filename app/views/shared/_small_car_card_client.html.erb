@@ -11,7 +11,7 @@
         <p> <%= car.color %></p>
       </div>
     </div>
-    <div class="photo-square-sm" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300');"></div>
+    <div class="photo-square-sm" style="background-image: url('<%= car.photo_url %>');"></div>
   </div>
   <div class="row-button">
     <div class="button-pick" id="edit">

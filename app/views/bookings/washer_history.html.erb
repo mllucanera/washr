@@ -2,10 +2,13 @@
   <div class="icon-box-title">
     <img src="<%= asset_url('cleancar.png') %>" alt="" class="icon-box-title">
   </div>
-<button class="button-rounded">TOTAL EARNED: <%= @completed.size * 260 %>$</button>
   <div class="box-inline-title">
     <p>My wash's services</p>
   </div>
+<!-- <button class="button-">TOTAL EARNED: <%= @completed.size * 260 %>$</button> -->
+<div class="box-inline-white">
+  <p>TOTAL EARNED: <%= @completed.size * 260 %>$</p>
+</div>
 
   <% @bookings.each do |booking| %>
     <%= render '/shared/car_card/small_history_card', booking: booking %>

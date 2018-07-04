@@ -1,5 +1,5 @@
   <div class="container">
-    <div class="background-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300');">
+    <div class="background-image" style="background-image: url('<%= cl_image_path booking.car.photo_url %>');">
     </div>
     <div class="white-box">
       <p> <%= booking.car.name.capitalize %> </p>

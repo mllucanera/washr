@@ -1,53 +1,59 @@
-var booking = document.getElementById("booking");
-var index = document.getElementById("index");
+var bookingNewView = document.getElementById("booking-new-js-handler");
+var carIndexView = document.getElementById("car-index-js-handler");
 
 var newCar = "";
 var newCarBooking = null;
 
-if (booking) {
+if (bookingNewView) {
   function refreshForm(innerHTML) {
     var newCarForm = document.getElementById("new-car-booking");
     newCarForm.innerHTML = innerHTML;
   }
 
-  newCar = `
-  <div class="form-check">
-  <input class="form-check-input radio_buttons optional" type="radio" value="<%= @car.id %>" name="booking[car_id]" id="booking_car_id_<%= @car.id %>">
-  <label class="collection_radio_buttons" for="booking_car_id_<%= @car.id %>"><%= @car.name %></label></div>`
+  newCar = "<%= j render '/shared/small_car_card_photo', car: @car %>"
 
   function addCar(car) {
-    var cars = document.getElementById('new_booking');
+    var cars = document.getElementById('car-list');
     cars.insertAdjacentHTML('beforeend', car);
+    
+    // Hide the in_page_form
     var carForm = document.getElementById("new-car-booking");
-    carForm.classList.add("hidden");
+    carForm && carForm.classList.add("hidden");
 
+    // Hide the car_form_modal
+    var modal_close_button = document.querySelector('[data-dismiss=modal]');
+    modal_close_button && modal_close_button.click();
   }
 }
 
 
-if (index) {
-
+if (carIndexView) {
   function refreshForm(innerHTML) {
     var newCarForm = document.getElementById("new-car-index");
     newCarForm.innerHTML = innerHTML;
   }
 
-  newCar = `<%= @car.name %>`
+  newCar = "<%= j render '/shared/small_car_card_client', car: @car %>"
 
   function addCar(car) {
-    var cars = document.getElementById('new_index');
+    var cars = document.getElementById('car-list');
     cars.insertAdjacentHTML('beforeend', car);
-    var carForm = document.getElementById("new-car-index");
-    carForm.classList.add("hidden");
 
+    // Hide the in_page_form
+    var carForm = document.getElementById("new-car-booking");
+    carForm && carForm.classList.add("hidden");
+
+    // Hide the car_form_modal
+    var modal_close_button = document.querySelector('[data-dismiss=modal]');
+    modal_close_button && modal_close_button.click();
   }
 }
 
 // Check for errors and render form or add to list.
 <% if @car.errors.any? %>
-refreshForm('<%= j render "client/cars/form", user: current_user, car: @car %>');
+  refreshForm('<%= j render "client/cars/form", user: current_user, car: @car %>');
 <% else %>
-addCar(newCar);
-refreshForm('<%= j render "client/cars/form", user: current_user, car: Car.new %>');
+  addCar(newCar);
+  // refreshForm('<%= j render "client/cars/form", user: current_user, car: Car.new %>');
 <% end %>
 
