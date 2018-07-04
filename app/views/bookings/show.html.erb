@@ -57,7 +57,7 @@
     </div>
 
     <!-- STATUS 'WASHED' -->
-    <div id="washed-box" class="<%= 'hidden' unless @booking.status == 'washed' %>">
+    <div id="washed-box" class="<%= 'hidden' unless @booking.status == 'washed' || @booking.status == 'completed' %>">
       <div class="box-description">
         <div>
           <img src="<%= asset_url('money.png') %>" alt="" class="icon-box-title">
