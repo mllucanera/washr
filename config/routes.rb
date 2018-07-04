@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # client routes
   resources :bookings, only: [:new, :create]
+  post '/client/bookings/confirm', to: 'bookings#confirm', as: 'client_booking_confirm'
 
   namespace :client do
      resources :bookings, only: [:show, :update, :index]

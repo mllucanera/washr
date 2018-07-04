@@ -34,15 +34,11 @@
 
     <% end %>
 
-    <div class="container">
-
-      <%= form_with model: @booking, id: :new_booking_form, class: :hidden do |f| %>
-        <%= f.text_field :car_id, id: :car_id %>
-        <%= f.text_field :address, value: params[:address] %>
-        <%= f.submit 'submit', id: :submit_booking %>
-      <% end %>
-
-    </div>
+    <%= form_with url: client_booking_confirm_path, id: :new_booking_form, class: :hidden do |f| %>
+      <%= f.text_field :car_id, id: :car_id %>
+      <%= f.text_field :address, value: @address %>
+      <%= f.submit 'submit', id: :submit_booking %>
+    <% end %>
   </div>
 </div>
 
