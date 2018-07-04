@@ -3,7 +3,7 @@
     <div class="card-text-group">
       <div class="car-title">
         <h5><%= car.name %></h5>
-        <h6> <%= car.plate %> </h6>
+        <h6> <%= car.plate.upcase %> </h6>
       </div>
       <hr>
       <div class="car-description">
@@ -14,6 +14,6 @@
     <div class="photo-square-xs" style="background-image: url('<%= car.photo_url %>');"></div>
   </div>
   <div class="car-select-btn hide_button">
-    <i class="fas fa-angle-right"></i> 
+    <i class="fas fa-angle-right"></i>
   </div>
 </div>
