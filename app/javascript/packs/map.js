@@ -232,7 +232,7 @@ else {
     var marker = new google.maps.Marker({
       position: {lat: lat, lng: lng},
       title: 'Your car is here.',
-      icon: 'https://res.cloudinary.com/sebastianbuffosempe/image/upload/v1530708783/logo_yc7hdt.png'
+      icon: 'https://res.cloudinary.com/jotisempe/image/upload/v1530712696/map-icon.png'
     });
     map.addMarker(marker);
   })
