@@ -1,9 +1,8 @@
-<div class="wrapper-big-card">
+<div class="wrapper">
   <%= render '/shared/car_card/car_card', booking: @booking, created: false %>
-
   <%= form_with model: @booking, local: true do |f| %>
     <%= f.text_field :car_id, value: @booking.car_id, class: :hidden %>
     <%= f.text_field :address, value: @booking.address, class: :hidden %>
-    <%= f.submit 'Confirm', class: "button-rounded button-position", id: "confirm-booking" %>
+    <%= f.submit 'Confirm', class: "button-rounded center button-position btn-modal", style: 'width: 50%', id: "confirm-booking" %>
   <% end %>
 </div>
