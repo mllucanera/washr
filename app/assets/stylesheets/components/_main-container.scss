@@ -30,5 +30,9 @@
 
 .container-show-car {
   display: block;
+  color: white;
   justify-content: center;
+  p {
+    padding: 10px;
+  }
 }
