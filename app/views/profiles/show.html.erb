@@ -4,7 +4,7 @@
       <%= cl_image_tag @user.photo, height: 150, width: 150, crop: :fill, class: "center" %>
         <br><br>
         <p>Member since - <strong><%= @user_since %></strong> day(s).</p>
-        <% if @role = "client" %>
+        <% if @role == "client" %>
         <p>Cars - <strong><%= @user_cars.count %></strong> car(s).</p>
         <% end %>
         <p>Bookings - <strong><%= @user_bookings %></strong> bookings.</p>

@@ -5,4 +5,6 @@ class WasherProfile < ApplicationRecord
   validates :dni_id, presence: true
   validates :phone_number, presence: true
 
+  mount_uploader :dni_photo, PhotoUploader
+
 end

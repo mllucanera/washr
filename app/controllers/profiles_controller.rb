@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
     if @role == "client"
       @user_bookings = Booking.where(car: @user.cars).count
     else
-      @user_bookings = Booking.where(user: @user).count
+      @user_bookings = Booking.where(washer: @user).count
     end
     if @user_bookings == 0
       @last_booking = "N/A"
