@@ -3,9 +3,14 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @booking.address = params[:address]
+    @address = params[:address]
     @cars = current_user.cars
     @car = Car.new
+  end
+
+  def confirm
+    @booking = Booking.new(booking_confirm_params)
+    @booking.status = 0
   end
 
   def create
@@ -95,6 +100,10 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def booking_confirm_params
+    params.permit(:car_id, :address)
   end
 
   def booking_params

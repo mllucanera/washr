@@ -1,0 +1,24 @@
+  <div id='confirm-view'>
+    <div>
+      <ul>
+        <li>
+          <i class="fas fa-car"></i>
+          <%= booking.car.brand.capitalize%>
+          <%=booking.car.model.capitalize%> - <%= booking.car.color%>
+        </li>
+        <hr>
+        <li>
+          <i class="fas fa-map-marker-alt"></i>
+          <%=booking.address.capitalize.truncate(18)%>
+        </li>
+        <hr>
+        <li>
+          <i class="far fa-clock"></i> 40 minutes</li>
+        </ul>
+      </div>
+      <div class="line">
+        <p> TOTAL: $260 </p>
+      </div>
+    </div>
+  </div>
+</div>

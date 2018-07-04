@@ -1,7 +1,7 @@
 <div id="new-navbar">
 
   <% if current_user.photo_url.present? %>
-  <%= cl_image_tag current_user.photo, secure: true, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+  <%= cl_image_tag current_user.photo, secure: true, aspect_ratio: "1:1",  crop: :fill, width: 60, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
   <% else %>
   <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
   <% end %>

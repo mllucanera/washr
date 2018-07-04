@@ -1,23 +1,44 @@
-    <div class="container padding-top-edit">
-      <h1><strong><%= @role.capitalize %></strong> profile:</h1>
-      <div>
-      <%= cl_image_tag @user.photo, height: 150, width: 150, crop: :fill, class: "center" %>
-        <br><br>
-        <p>Member since - <strong><%= @user_since %></strong> day(s).</p>
-        <% if @role == "client" %>
-        <p>Cars - <strong><%= @user_cars.count %></strong> car(s).</p>
-        <% end %>
-        <p>Bookings - <strong><%= @user_bookings %></strong> bookings.</p>
-        <p>Last booking - <strong><%= @last_booking %></strong></p>
 
-        <br><br><br>
+<div class="wrapper">
+  <div class="icon-box-title">
+    <img src="<%= asset_url('user.png') %>" alt="" class="icon-box-title">
+  </div>
+  <div class="box-inline-title">
+    <p>My profile</p>
+  </div>
+  <div class="container">
+    <div class="background-image" style="background-image: url('<%= cl_image_path current_user.photo_url %>');">
+    </div>
+    <div class="white-box">
+      <!-- PUT NAME OR USERNAME(MAIL) -->
+      <p> <%= current_user.email %> </p>
+    </div>
+    <div class="box-description">
+          <ul>
+        <li>
+          <i class="fas fa-user"></i>
+          <%= @user.role.capitalize %> since <%= @user.created_at.strftime("%d/%m/%Y") %>
+        </li>
+        <hr>
+        <li><i class="fas fa-car"></i>
+          You own <%= pluralize(@user.cars.count, "car") %>
+        </li>
+        <hr>
 
-        <p>Logged in as - <strong><%= @user.email %></strong></p>
+        </ul>
+       <% if @nro_bookings = [] %>
+       <i class="far fa-frown" style="font-size: 30px"></i>
+        You don't have any washes yet
+        <% else %>
+        <i class="far fa-happy" style="font-size: 30px"></i>
+          <%= @nro_bookings.last  %>
+          <% end %>
       </div>
 
-
-
+      </div>
     </div>
+  </div>
+</div>
 
 
 
