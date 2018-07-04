@@ -13,15 +13,16 @@
             <div class="form-inputs">
               <!-- EMAIL -->
               <div class="input-sign-up">
-                <%= f.input :email, label: false, required: false, autofocus: true, placeholder: "Username" %>
+                <%= f.input :email, label: false, required: false, autofocus: true, placeholder: "Email" %>
               </div>
               <!-- PASSWORD -->
               <div class="input-sign-up">
-                <%= f.input :password, label: false, required: false, placeholder: "Password", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+                <%= f.input :password, label: false, required: false, placeholder: "Password" %>
+                <!-- hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) -->
               </div>
               <!-- PASSWORD CONFIRMATION -->
               <div class="input-sign-up">
-                <%= f.input :password_confirmation, label: false, required: false, placeholder: "Password Conrimation" %>
+                <%= f.input :password_confirmation, label: false, required: false, placeholder: "Password Confirmation" %>
               </div>
             </div>
             <!-- SIGN UP -->
