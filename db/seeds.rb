@@ -8,16 +8,16 @@ C_FIRST_NAME = %w(Juana Sofia Ivan Nicolas)
 C_LAST_NAME = %w(Cervetti Ninaus Cosentino Keneddy)
 
 #Washer
-W_EMAIL = %w(javierp@gmail.com fernandez_hugo@gmail.com)
-W_FIRST_NAME = %w(Javier Hugo)
-W_LAST_NAME = %w(Perez Fernandez)
+W_EMAIL = %w(sebastianb@gmail.com saml@gmail.com)
+W_FIRST_NAME = %w(Sebastian Sam)
+W_LAST_NAME = %w(Buffo Levy)
 
 #Car
-PLATE = ["ejk 224", "hne 459", "hpg 400", "MMY 329", "JTJ 539", "GKT550", "GOO864", "JOU360"]
-COLOR = %w(Blue Grey Black White Black Black Black Black)
+PLATE = ["ac 577 ng", "hkr 920", "jjv 695", "pei 066", "mks 719", "ipt 796", "ab 990 uw", "ije 265"]
+COLOR = %w(Black Platinium Silver Blue Black Silver Silver Black)
 NAME = ["My car", "Dad's", "Honey", "Mum's", "Javier's car", "Mariana's car", "Sweetie Peugeot", "The Kennedy"]
-MODEL = %w(206 Tiida 307 C3 Clio Gol 206 Civic)
-BRAND = %w(Peugeot Nissan Peugeot Citroen Renault Volkswagen Peugeot Honda)
+MODEL = ["Prisma Joy", "Corolla", "307", "Spin Activ", "Journey", "Fit", "CRV", "307"]
+BRAND = %w(Chevrolet Toyota Peugeot Chevrolet Dodge Honda Honda Peugeot)
 
 
 t = 0
@@ -58,7 +58,7 @@ end
     car = Car.new(car_data)
     car.save
 
-    car.remote_photo_url = "https://res.cloudinary.com/logicisaliar/image/upload/v1530544575/#{i + 1}.jpg"
+    car.remote_photo_url = "https://res.cloudinary.com/jotisempe/image/upload/a_0/v1530725199/cars/car#{c+1}.jpg"
     car.save
     puts "Car #{c+1} created"
     c += 1

@@ -1,16 +1,38 @@
-    <div class="container padding-top-edit">
-      <h1><strong><%= @role.capitalize %></strong> profile:</h1>
-      <div>
-      <%= cl_image_tag @user.photo, height: 150, width: 150, crop: :fill, class: "center" %>
-        <p>Member since - <strong><%= @user_since %></strong> days.</p>
-        <% if @role = "client" %>
-        <p>Cars - <strong><%= @user_cars.count %></strong> cars.</p>
-        <% end %>
-        <p>Bookings - <strong><%= @user_bookings %></strong> bookings.</p>
-        <p>Last booking - <strong><%= @last_booking %></strong></p>
-      </div>
-
+<div class="wrapper">
+  <div class="icon-box-title">
+    <img src="<%= asset_url('user.png') %>" alt="" class="icon-box-title">
+  </div>
+  <div class="box-inline-title">
+    <p>My profile</p>
+  </div>
+  <div class="container">
+    <div class="background-image" style="background-image: url('<%= cl_image_path current_user.photo_url %>');">
     </div>
+    <div class="white-box">
+      <!-- PUT NAME OR USERNAME(MAIL) -->
+      <p> <%=  %> </p>
+    </div>
+    <div class="box-description">
+          <ul>
+        <li>
+          <i class="fas fa-user"></i>
+          <%= @user.role.capitalize %> since <%= @user.created_at.strftime("%d/%m/%Y") %>
+        </li>
+        <hr>
+        <li><i class="fas fa-car"></i>
+          You own: <%= pluralize(@user.cars.count, "car") %>
+        </li>
+        <hr>
+        <li>
+          <i class="far fa-clock"></i> 40 minutes</li>
+        </ul>
+<!--       <div class="line">
+        <p> TOTAL: $260 </p> -->
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
