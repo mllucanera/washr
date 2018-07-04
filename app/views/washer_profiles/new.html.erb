@@ -1,20 +1,39 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.5) 50%), url('https://bizone.biz/38-thickbox_default/car-wash.jpg');">
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-right" style="border-radius: 5px; background-color: rgba(250,250,250,0.7); padding: 25px">
-    <div style="color:grey; font-size: 40px">
-    Fill the form and start earning money right now!
+<div class="wrapper-big-card">
+  <div class="container">
+    <div style= "text-align: center">
+      <p style="font-size: 18px;color: white">Complete your data and start earning money right now!</p>
+      <img src="<%= asset_url('money.png') %>" alt="" class="icon-box-title" style= "text-align: center">
+      <hr>
     </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+        <div class="login-form-custom">
+          <div class="form-container">
 
-
-  <%= simple_form_for @washer_profile do |f| %>
-    <%= f.error_notification %>
-    <div class="form-inputs">
-      <%= f.input :phone_number %>
-      <%= f.input :dni_id %>
-      <%= f.input :dni_photo , as: :file %>
-      <%#= f.input :dni_photo_cache, as: :hidden %>
-      <%= f.button :submit, "Confirm registration!" %>
-   </div>
-  <% end %>
-
+            <%= simple_form_for @washer_profile do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <div class="input-sign-up">
+                <%= f.input :phone_number, label: false, placeholder: "Phone number" %>
+                <%= f.input :dni_id, label: false, placeholder: "DNI" %>
+              </div>
+              <div style="display: none;">
+                <%= f.input :dni_photo, label: false %>
+              </div>
+              <div>
+                <div class="icon-position" onclick="document.getElementById('washer_profile_dni_photo').click();">
+                  <i class="fas fa-camera"></i>
+                  <p>Upload picture</p>
+                </div>
+              </div>
+              <%#= f.input :dni_photo_cache, as: :hidden %>
+              <%= f.button :submit, "Confirm registration!",class: "button-rounded" %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
