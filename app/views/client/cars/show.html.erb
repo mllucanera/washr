@@ -1,6 +1,12 @@
-<h1>Name: <%= @car.name %></h1>
-<h2>Color: <%= @car.color %></h2>
-<h2>Model: <%= @car.model %></h2>
-<h2>Brand: <%= @car.brand %></h2>
-<%= cl_image_tag @car.photo, height: 300, width: 400, crop: :fill %>
-<%= link_to "Back", client_cars_path, class: "btn-primary" %>
+<div class="container-show-car padding-top-edit container">
+  <div class="background-image" style="background-image: url('<%= cl_image_path @car.photo_url %>');">
+  </div>
+  <div class="justify-center padding-top-edit">
+    <i class="fas fa-car"></i>
+    <%= @car.brand.capitalize%>
+    <%=@car.model.capitalize%> - <%= @car.color%>
+  </div>
+  <br><br>
+  <%= link_to "Back", client_cars_path, class: "button-opacity" %>
+</div>
+
