@@ -10,7 +10,7 @@
     </div>
     <div class="white-box">
       <!-- PUT NAME OR USERNAME(MAIL) -->
-      <p> <%=  %> </p>
+      <p> <%= current_user.email %> </p>
     </div>
     <div class="box-description">
           <ul>
@@ -20,14 +20,18 @@
         </li>
         <hr>
         <li><i class="fas fa-car"></i>
-          You own: <%= pluralize(@user.cars.count, "car") %>
+          You own <%= pluralize(@user.cars.count, "car") %>
         </li>
         <hr>
-        <li>
-          <i class="far fa-clock"></i> 40 minutes</li>
+
         </ul>
-<!--       <div class="line">
-        <p> TOTAL: $260 </p> -->
+       <% if @nro_bookings = [] %>
+       <i class="far fa-frown" style="font-size: 30px"></i>
+        You don't have any washes yet
+        <% else %>
+        <i class="far fa-happy" style="font-size: 30px"></i>
+          <%= @nro_bookings.last  %>
+          <% end %>
       </div>
       </div>
     </div>
