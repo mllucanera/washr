@@ -58,7 +58,7 @@ end
     car = Car.new(car_data)
     car.save
 
-    car.remote_photo_url = "https://res.cloudinary.com/jotisempe/image/upload/v1530725199/cars/car#{i+1}.jpg"
+    car.remote_photo_url = "https://res.cloudinary.com/jotisempe/image/upload/a_0/v1530725199/cars/car#{c+1}.jpg"
     car.save
     puts "Car #{c+1} created"
     c += 1
