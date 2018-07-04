@@ -6,6 +6,13 @@
 <p>
   Your car is washed.
 </p>
+
+
+<% 5.times do |i| %>
+  <i class="fas fa-star" id="<%= i %>"></i>
+<% end %>
+
+
 <%= link_to "OK", client_booking_path(booking.id), method: :put, class: "button-rounded button-position center" %>
 </div>
 
