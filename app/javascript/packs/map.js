@@ -228,12 +228,12 @@ else {
     var lat = location.coords.latitude;
     var lng = location.coords.longitude;
     map.setCenter(lat, lng);
-    map.setZoom(15);
+    map.setZoom(18);
     var marker = new google.maps.Marker({
       position: {lat: lat, lng: lng},
       setMap: map,
       title: 'Your car is here.',
-      icon: 'https://res.cloudinary.com/sebastianbuffosempe/image/upload/v1530630810/white_vbvbjz.png'
+      icon: 'https://res.cloudinary.com/sebastianbuffosempe/image/upload/v1530708783/logo_yc7hdt.png'
     });
     map.addMarker(marker);
   })
