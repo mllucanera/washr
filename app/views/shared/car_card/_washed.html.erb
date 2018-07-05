@@ -7,11 +7,11 @@
     Your car is washed.
   </p>
 
-  <div class="star-postition">
+  <div class="star-position">
   <% 5.times do |i| %>
   <i class="fas fa-star" id="<%= i %>"></i>
   <% end %>
   </div>
 
-  <%= link_to "RATE", { controller: "client/bookings", action: "rate", rating: 1 }, id: 'btn-rating', class: "button-rounded button-position center" %>
+  <%= link_to "RATE", { controller: "client/bookings", action: "rate", rating: 1 }, id: 'btn-rating', class: "button-rounded-rating " %>
 </div>
