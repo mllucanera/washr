@@ -3,8 +3,9 @@
   <img src="<%= asset_url('cleancar.png') %>" alt="" class="icon-box-title">
 </div>
 <div class="box-inline-title">
-  <p>My history washes</p>
+  <p>Available washes</p>
 </div>
+
 <div class="container">
   <% @bookings.each do |booking| %>
   <%= render '/shared/small_car_card', booking: booking, location: @location %>

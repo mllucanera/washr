@@ -53,6 +53,18 @@ class BookingsController < ApplicationController
     redirect_to booking_path(@booking.id)
   end
 
+  def washer_map
+    bookings = Booking.where(status: "washer_pending").where.not(latitude: nil, longitude: nil)
+    @markers = bookings.map do |booking|
+      {
+        lat: booking.latitude,
+        lng: booking.longitude,
+        icon: 'https://res.cloudinary.com/jotisempe/image/upload/v1530712696/map-icon.png',
+        infoWindow: { content: render_to_string(partial: "/shared/car_book", locals: { booking: booking }) }
+      }
+    end
+  end
+
   def mark_as_washing
     @booking.washer = current_user
     @booking.status = 1

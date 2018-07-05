@@ -1,5 +1,4 @@
-<div id="map" class="map-home-input-empty" data-markers="<%= @markers.to_json %>"></div>
-
+<%= render '/shared/map', markers: @markers %>
 <div class="container-address">
   <div id="address-input-box">
     <%= form_tag root_path, method: :get do %>
