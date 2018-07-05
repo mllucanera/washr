@@ -11,10 +11,10 @@ client1 = User.new(
   role: "client",
   )
 
-#client1.skip_confirmation!
+client1.skip_confirmation!
 client1.save
 client1.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802861/WASHR/Clients/client1.jpg"
-#client1.skip_confirmation!
+client1.skip_confirmation!
 client1.save
 
 puts "Client 1 created"
@@ -71,10 +71,10 @@ client2 = User.new(
   last_name:"Levy",
   role: "client",
   )
-#client2.skip_confirmation!
+client2.skip_confirmation!
 client2.save
 client2.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802861/WASHR/Clients/client2.jpg"
-#client2.skip_confirmation!
+client2.skip_confirmation!
 client2.save
 
 puts "Client 2 created"
@@ -116,10 +116,10 @@ client3 = User.new(
   last_name:"Simian",
   role: "client",
   )
-#client3.skip_confirmation!
+client3.skip_confirmation!
 client3.save
 client3.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802861/WASHR/Clients/client3.jpg"
-#client3.skip_confirmation!
+client3.skip_confirmation!
 client3.save
 
 puts "Client 3 created"
@@ -135,10 +135,10 @@ washer1 = User.new(
   last_name:"Shah",
   role: "washer",
   )
-#washer1.skip_confirmation!
+washer1.skip_confirmation!
 washer1.save
 washer1.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer1.jpg"
-#washer1.skip_confirmation!
+washer1.skip_confirmation!
 washer1.save
 
 washer_profile1 = WasherProfile.new(
@@ -147,7 +147,6 @@ washer_profile1 = WasherProfile.new(
   phone_number: 114589273
   )
 washer_profile1.remote_dni_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer1.jpg"
-#washer_profile1.skip_confirmation!
 washer_profile1.save
 
 puts "Washer 1 created"
@@ -159,10 +158,10 @@ washer2 = User.new(
   last_name:"Buffo Sempe",
   role: "washer",
   )
-#washer2.skip_confirmation!
+washer2.skip_confirmation!
 washer2.save
 washer2.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer2.jpg"
-#washer2.skip_confirmation!
+washer2.skip_confirmation!
 washer2.save
 
 washer_profile2 = WasherProfile.new(
@@ -171,7 +170,6 @@ washer_profile2 = WasherProfile.new(
   phone_number: 114589273
   )
 washer_profile2.remote_dni_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer2.jpg"
-#washer_profile2.skip_confirmation!
 washer_profile2.save
 
 puts "Washer 2 created"
@@ -183,10 +181,10 @@ washer3 = User.new(
   last_name:"Sempe",
   role: "washer",
   )
-#washer3.skip_confirmation!
+washer3.skip_confirmation!
 washer3.save
 washer3.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer3.jpg"
-#washer3.skip_confirmation!
+washer3.skip_confirmation!
 washer3.save
 
 
@@ -196,7 +194,6 @@ washer_profile3 = WasherProfile.new(
   phone_number: 114589273
   )
 washer_profile3.remote_dni_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer3.jpg"
-#washer_profile3.skip_confirmation!
 washer_profile3.save
 
 puts "Washer 3 created"
