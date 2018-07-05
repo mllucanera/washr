@@ -5,6 +5,9 @@
         <div class="logo-signup">
           <%= image_tag(asset_path("logo_carwash02.png"), class: "logo-xl") %>
         </div>
+        <p>
+          <span id="banner-typed-text"></span>
+        </p>
         <div class="login-form-custom">
           <div class="form-container">
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
