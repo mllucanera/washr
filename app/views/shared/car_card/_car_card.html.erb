@@ -6,20 +6,21 @@
     </div>
     <div class="box-description">
       <% unless created %>
-        <%= render '/shared/car_card/confirm', booking: booking %>
+      <%= render '/shared/car_card/confirm', booking: booking %>
       <% else %>
-        <% case booking.status %>
-        <% when 'washer_pending' %>
-        <%= render '/shared/car_card/washer_pending', booking: booking %>
-        <% when 'washing' %>
-        <%= render '/shared/car_card/washing', booking: booking %>
-        <% when 'washed' %>
-        <%= render '/shared/car_card/washed', booking: booking %>
-        <% when 'completed' %>
-        <%= render '/shared/car_card/completed', booking: booking %>
-        <%= link_to "Ok", client_bookings_path, class: "button-rounded button-position" %>
-
-        <% end %>
+      <% case booking.status %>
+      <% when 'washer_pending' %>
+      <%= render '/shared/car_card/washer_pending', booking: booking %>
+      <% when 'washing' %>
+      <%= render '/shared/car_card/washing', booking: booking %>
+      <% when 'washed' %>
+      <%= render '/shared/car_card/washed', booking: booking %>
+      <% when 'completed' %>
+      <%= render '/shared/car_card/completed', booking: booking %>
+      <div>
+      <%= link_to "Ok", client_bookings_path, class: "button-rounded-completed"%>
+      </div>
+      <% end %>
       <% end %>
     </div>
   </div>

@@ -33,7 +33,7 @@
           <%= (@booking.created_at + 1*60*60).strftime("%H:%m") %>
         </p>
       </div>
-      <%= link_to "CONFIRM", { controller: "bookings", action: "mark_as_washing", id: @booking.id, remote: true}, data: { confirm: "Are you sure you want to pick this wash?"}, class: "button-rounded button-position center" %>
+      <%= link_to "CONFIRM", { controller: "bookings", action: "mark_as_washing", id: @booking.id, remote: true}, data: { confirm: "Are you sure you want to pick this wash?"}, class: "button-rounded center" %>
     </div>
 
     <!-- STATUS 'WASHING' -->
@@ -52,7 +52,7 @@
           <%= (@booking.created_at + 1*60*60).strftime("%H:%m") %>
         </p>
       </div>
-      <%= link_to "MARK AS COMPLETED",{ controller: "bookings", action: "mark_as_washed", id: @booking.id, remote: true}, data: { confirm: "Are you sure you completed the task?"}, class: "button-rounded button-position center" %>
+      <%= link_to "MARK AS COMPLETED",{ controller: "bookings", action: "mark_as_washed", id: @booking.id, remote: true}, data: { confirm: "Are you sure you completed the task?"}, class: "button-rounded center" %>
     </div>
 
     <!-- STATUS 'WASHED' -->
@@ -77,8 +77,8 @@
 
 
       </div>
-      <%= link_to 'PICK MORE WASHES', bookings_path, class: "button-rounded button-position center" %>
-      <%= link_to 'VIEW WASHES HISTORY', washer_bookings_path, class: "button-rounded button-position center" %>
+      <%= link_to 'PICK MORE WASHES', bookings_path, class: "button-rounded center" %>
+      <%= link_to 'VIEW WASHES HISTORY', washer_bookings_path, class: "button-rounded center" %>
     </div>
   </div>
 </div>

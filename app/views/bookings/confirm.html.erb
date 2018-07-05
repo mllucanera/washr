@@ -3,7 +3,7 @@
   <%= form_with model: @booking, local: true do |f| %>
     <%= f.text_field :car_id, value: @booking.car_id, class: :hidden %>
     <%= f.text_field :address, value: @booking.address, class: :hidden %>
-    <%= f.submit 'Confirm', class: "button-rounded center button-position btn-modal", style: 'width: 50%', id: "confirm-booking" %>
+    <%= f.submit 'Confirm', class: "button-rounded center btn-modal", style: 'width: 50%', id: "confirm-booking" %>
   <% end %>
   <%= link_to "Back", new_booking_path({ address: @booking.address }), class: "button-rounded center", style: 'width: 50%'  %>
 </div>
