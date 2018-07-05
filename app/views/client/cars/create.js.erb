@@ -53,7 +53,8 @@ if (bookingNewView) {
     // Hide the car_form_modal
     var modal_close_button = document.querySelector('[data-dismiss=modal]');
     modal_close_button && modal_close_button.click();
-    
+
+    location.reload();
     selectCar();
   }
 }
@@ -78,6 +79,8 @@ if (carIndexView) {
     // Hide the car_form_modal
     var modal_close_button = document.querySelector('[data-dismiss=modal]');
     modal_close_button && modal_close_button.click();
+
+    location.reload();
   }
 }
 
