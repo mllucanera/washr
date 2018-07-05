@@ -39,15 +39,10 @@ class User < ApplicationRecord
       user = User.new(user_params)
       user.password = Devise.friendly_token[0,20]  # Fake password for validation
       user.role = "client"
+      user.skip_confirmation!
       user.save
     end
 
     return user
-  end
-
-  private
-
-  def send_welcome_email
-    UserMailer.welcome(self).deliver_now
   end
 end
