@@ -62,9 +62,20 @@
           <img src="<%= asset_url('money.png') %>" alt="" class="icon-box-title">
         </div>
         <hr>
-        <p>Congratulations!</p>
-        <p>You completed the wash right on time!</p>
+        <p style="font-weight: bold">Congratulations!</p>
+        <p style="font-weight: bold">You completed the wash right on time!</p>
+        <p>Clients' rate:</p>
+        <% if @booking.status == "completed" %>
+        <p><% (@booking.rating.to_i).times do |i| %>
+          <i class="fas fa-star yellow"></i>
+          <% end %>
+        </p>
         <p>Spread happiness</p>
+        <% else %>
+        <p style="font-style: italic;">Oh! Client hasn't rate you yet!</p>
+        <% end %>
+
+
       </div>
       <%= link_to 'PICK MORE WASHES', bookings_path, class: "button-rounded button-position center" %>
       <%= link_to 'VIEW WASHES HISTORY', washer_bookings_path, class: "button-rounded button-position center" %>
