@@ -1,8 +1,8 @@
   <div class="wrapper">
-
     <div class="icon-box-title">
       <img src="<%= asset_url('car.png') %>" alt="" class="icon-box-title">
     </div>
+
     <div class="box-inline-title">
       <% if @cars.empty? %>
       <p>Add your car</p>
@@ -13,20 +13,27 @@
 
     <div id="car-index-js-handler">
       <% if @cars.empty? %>
-      <div class="container" id="new-car-booking">
-        <%= render 'client/cars/form', car: @car, client: current_user %>
-      </div>
-      <div id="car-list"></div>
+
+        <div class="container" id="new-car-index">
+          <%= render 'client/cars/form', car: @car, client: current_user %>
+        </div>
+
+        <div id="car-list"></div>
+
       <% else %>
-      <div id="car-list">
-        <% @cars.each do |car| %>
-        <%= render '/shared/small_car_card_client', car: car %>
-        <% end %>
-      </div>
-      <div class="center">
-        <button type="button" class="button-opacity btn-modal" id="add-car-booking" data-toggle="modal" data-target=".bs-example-modal-lg"><img src="<%= asset_url('add.png') %>" alt="" class="icon-small"> Add new Car</button>
-      </div>
+
+        <div id="car-list">
+          <% @cars.each do |car| %>
+            <%= render '/shared/small_car_card_client', car: car %>
+          <% end %>
+        </div>
+
+        <div class="center">
+          <button type="button" class="button-opacity btn-modal" id="add-car-index" data-toggle="modal" data-target="#car_form_modal"><img src="<%= asset_url('add.png') %>" alt="" class="icon-small"> Add new Car</button>
+        </div>
       <% end %>
+
     </div>
   </div>
+
   <%= render 'client/cars/car_form_modal', car: @car, client: current_user %>
