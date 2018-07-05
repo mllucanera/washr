@@ -1,3 +1,4 @@
+
 <div class="wrapper">
   <div class="icon-box-title">
     <img src="<%= asset_url('user.png') %>" alt="" class="icon-box-title">
@@ -13,7 +14,7 @@
       <p> <%= current_user.email %> </p>
     </div>
     <div class="box-description">
-          <ul>
+      <ul>
         <li>
           <i class="fas fa-user"></i>
           <%= @user.role.capitalize %> since <%= @user.created_at.strftime("%d/%m/%Y") %>
@@ -24,19 +25,11 @@
         </li>
         <hr>
 
-        </ul>
-       <% if @nro_bookings = [] %>
-       <i class="far fa-frown" style="font-size: 30px"></i>
-        You don't have any washes yet
-        <% else %>
-        <i class="far fa-happy" style="font-size: 30px"></i>
-          <%= @nro_bookings.last  %>
-          <% end %>
-      </div>
-      </div>
+      </ul>
+      <br>
+      <i class="far fa-smile" style="font-size: 50px"></i>
     </div>
   </div>
 </div>
-
-
-
+</div>
+</div>

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   # client routes
   resources :bookings, only: [:new, :create]
   post '/client/bookings/confirm', to: 'bookings#confirm', as: 'client_booking_confirm'
+  get 'client/bookings/rate/:id', to: 'client/bookings#rate'
 
   namespace :client do
      resources :bookings, only: [:show, :update, :index]

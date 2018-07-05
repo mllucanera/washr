@@ -12,7 +12,7 @@
       <% if current_user.role == 'client' %>
       <!-- Links when logged in -->
       <%= link_to "My cars", client_cars_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My Washes", client_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My washes", client_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% elsif current_user.role == 'washer' %>
       <%= link_to "My History", washer_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% end %>
@@ -23,7 +23,9 @@
     </li>
 
     <li>
+      <% if current_user.role == 'client' %>
       <%= link_to "Become a washer", welcome_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
     </li>
 
     <li>

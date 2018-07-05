@@ -1,0 +1,26 @@
+<div>
+  <ul>
+    <li>
+      <i class="fas fa-car"></i>
+      <%= booking.car.brand.capitalize%>
+      <%=booking.car.model.capitalize%> - <%= booking.car.color%>
+    </li>
+
+    <hr>
+
+    <li>
+      <i class="fas fa-map-marker-alt"></i>
+      <%=booking.address.capitalize.truncate(18)%>
+    </li>
+
+    <hr>
+
+    <li>
+      <i class="fas fa-money-check-alt"></i> $260
+    </li>
+  </ul>
+
+  <img src="<%= asset_url('cleancar.png') %>" alt="" class="icon-medium">
+  <br>
+   Wash Status: <%= booking.status.capitalize %>
+</div>
