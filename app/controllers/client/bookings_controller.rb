@@ -12,7 +12,12 @@ class Client::BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
-    @current_user_bookings = Booking.where(client: current_user)
+    @client_bookings = []
+    @bookings.map do |b|
+      if b.car.user == current_user
+        @client_bookings << b
+      end
+    end
   end
 
   def update
@@ -27,3 +32,6 @@ class Client::BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 end
+
+
+
