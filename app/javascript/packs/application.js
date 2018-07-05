@@ -9,4 +9,4 @@ btnGooFunc();
 // inputBlur();
 autocomplete();
 selectCar();
-rate();
+// rate();
