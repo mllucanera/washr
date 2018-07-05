@@ -5,13 +5,17 @@
   <div class="box-inline-title">
     <p>My history washes</p>
   </div>
-  <% unless @current_user_bookings.empty? %>
-    <% @current_user_bookings.each do |booking| %>
-      <%= render '/shared/car_card/small_history_card', booking: booking %>
-    <% end %>
+  <% if @client_bookings == [] %>
+  <i class="far fa-frown center" style="font-size: 30px"></i>
+  <p style="color: white; text-align: center">You don't have any washes yet</p>
+  <% else %>
+  <% @client_bookings.each do |booking| %>
+  <%= render '/shared/car_card/small_history_card', booking: booking %>
+  <% end %>
   <% end %>
   <%= link_to root_path, class: "button-opacity center" do %>
   <img src="<%= asset_url('add.png')%>" alt="" class="icon-small">
   New wash
   <% end %>
+</div>
 </div>
