@@ -66,7 +66,7 @@
         <p style="font-weight: bold">You completed the wash right on time!</p>
         <p>Clients' rate:</p>
         <% if @booking.status == "completed" %>
-        <p><% 5.times do |i| %>
+        <p><% (@booking.rating.to_i).times do |i| %>
           <i class="fas fa-star yellow"></i>
           <% end %>
         </p>
