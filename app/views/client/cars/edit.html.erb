@@ -1,4 +1,12 @@
-<div class="container padding-top-edit">
+<div class="container wrapper">
+    <div class="icon-box-title">
+    <img src="<%= asset_url('car.png') %>" alt="" class="icon-box-title">
+  </div>
+  <div class="box-inline-title">
+    <p>Edit your car</p>
+  </div>
+  <br>
+  <br>
   <%= simple_form_for([:client, @car]) do |f| %>
     <%= f.error_notification %>
 
