@@ -24,8 +24,11 @@
   </div>
   <div class="row-button">
     <div class="button-pick">
-      <% current_user.role == 'client' %>
+      <% if current_user.role == 'client' %>
       <%= link_to "More information", client_booking_path(booking.id)%>
+      <% elsif current_user.role == 'washer' %>
+      <%= link_to "More information", booking_path(booking.id)%>
+      <% end %>
     </div>
   </div>
 </div>
