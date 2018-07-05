@@ -4,7 +4,7 @@
 %>
   <% if current_user.washer? %>
   <div id="map-button">
-    <%= link_to root_path do %>
+    <%= link_to washer_map_path do %>
       <%= image_tag "map", class: "icon" %>
     <% end %>
   </div>
