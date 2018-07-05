@@ -10,7 +10,7 @@
       <% else %>
         <% case booking.status %>
         <% when 'washer_pending' %>
-        <%= render '/shared/car_card/washer_pending', booking: booking %>
+        <%= render '/shared/car_card/washed', booking: booking %>
         <% when 'washing' %>
         <%= render '/shared/car_card/washing', booking: booking %>
         <% when 'washed' %>
