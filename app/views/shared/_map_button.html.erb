@@ -2,9 +2,17 @@
   current_page?(root_path) ||
   current_page?('/welcome')
 %>
+  <% if current_user.washer? %>
+  <div id="map-button">
+    <%= link_to washer_map_path do %>
+      <%= image_tag "map", class: "icon" %>
+    <% end %>
+  </div>
+  <% else %>
   <div id="map-button">
     <%= link_to root_path do %>
       <%= image_tag "map", class: "icon" %>
     <% end %>
   </div>
+  <% end %>
 <% end %>

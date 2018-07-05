@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   # washer routes
   get '/bookings/history', to: 'bookings#washer_history', as: 'washer_bookings'
+  get '/bookings/map', to: 'bookings#washer_map', as: 'washer_map'
   resources :bookings, only: [:show, :index, :update, :edit]
 
   namespace :washer do

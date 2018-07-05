@@ -5,6 +5,7 @@
 <div class="box-inline-title">
   <p>Requests</p>
 </div>
+
 <div class="container">
   <% @bookings.each do |booking| %>
   <%= render '/shared/small_car_card', booking: booking, location: @location %>
