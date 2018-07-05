@@ -2,57 +2,30 @@
 
   <div>
     <div class="button-opacity center" style="width: 350px;">
-    <p style="font-size: 30px; font-weight: bold; color: white; margin: auto;"> WELCOME!</p>
+      <p style="font-size: 30px; font-weight: bold; color: white; margin: auto;"> WELCOME!</p>
     </div>
     <div style="border-radius: 5px; text-align: center; margin: 0 10%; padding:15px; width: -webkit-fill-available">
-      <p style="font-size: 25px;color: white; margin: auto;">WASH CARS</p>
-      <p style="font-size: 25px;color: white; margin: auto">& EARN MONEY!</p>
+      <p style="font-size: 22px;color: white; margin: auto;">WASH CARS & EARN MONEY!</p>
       <br>
       <img src="<%= asset_url('money.png') %>" alt="" class="icon-box-title" style= "text-align: center; width: 100px;">
       <br>
       <br>
       <hr>
-      <!-- agrandar el boton para los costados -->
-      <%= link_to "  Start now!  ", new_washer_profile_path, class: "button-rounded", style: 'font-size: 20px; '%>
+      <%= link_to "  Start now!  ", new_washer_profile_path, class: "button-rounded big-size"%>
     </div>
   </div>
 
+  <br>
   <div style="margin: 3% 10%;">
-    <ul style="color: white; list-style-type:none;">
-      <!-- poner listing-style-type:none -->
-      <li><i class="fas fa-users" ></i> Be proud of being part of a comunity of washers recognized in the world.</li>
-      <li><i class="fas fa-hand-holding-usd"></i> Feel rewarded. You will earn money and be payd on time, with lots of benefits.</li>
-      <li><i class="fas fa-parachute-box"></i> Be supported. We will be with you at any time you need us.</li>
-      <li><i class="fas fa-clock"></i> Feel free. You choose when to start and end your day: no fixed work schedules</li>
-    </ul>
+    <div class="description-welcome" style="border: none; text-align: center">
+      <ul style="color: white; list-style-type:none;">
+        <i class="fas fa-hand-holding-usd" style="font-size: 40px; align-items: center; text-align: center;"></i>
+        <li>You will earn money and be payd on time, with lots of benefits.</li>
+        <hr>
+        <i class="fas fa-parachute-box" style="font-size: 40px; align-items: center; text-align: center;"></i>
+        <li> Feel free. to start and end your day: no fixed work schedules</li>
+      </ul>
+    </div>
   </div>
-
-  <div class="flex-container">
-
-    <div class="row" style="font-size: 15px;justify-content: space-around;border:1px solid white; border-radius:7px; display: flex; margin: 15px; height: 110px">
-
-      <div class="col-xs-3" style="background-image: url('https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=29a17c0d14e2ef6c46b93628fa033371&auto=format&fit=crop&w=500&q=80');background-size:cover;  background-position: center center; height: 100px; width:150px; margin: auto; border-radius: 5px">
-      </div>
-
-      <div class="col-xs-7" style="font-size: 15px;display:flex; text-align: center; align-items: center">
-        <div>
-          <h4>Working in Washr has completly changed my life!</h4>
-          <p>Pedro, Buenos Aires</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row" style="font-size: 15px;justify-content: space-around;border:1px solid white; border-radius:7px; display: flex; margin: 15px; height: 110px">
-
-      <div class="col-xs-5" style="background-image: url('https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d34b70c76d7e81532a3f922ba31f3a5f&auto=format&fit=crop&w=500&q=80'); background-size:cover; background-position: center center; height: 100px;width:150px; margin: auto; border-radius: 5px">
-      </div>
-
-      <div class="col-xs-7" style="font-size: 15px;display:flex; text-align: center; align-items: center ">
-        <div>
-          <h4>The best part: you are your own boss!</h4>
-          <p>José, Buenos Aires</p>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
