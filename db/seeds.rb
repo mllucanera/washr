@@ -147,7 +147,6 @@ washer_profile1 = WasherProfile.new(
   phone_number: 114589273
   )
 washer_profile1.remote_dni_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer1.jpg"
-washer_profile1.skip_confirmation!
 washer_profile1.save
 
 puts "Washer 1 created"
@@ -171,7 +170,6 @@ washer_profile2 = WasherProfile.new(
   phone_number: 114589273
   )
 washer_profile2.remote_dni_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer2.jpg"
-washer_profile2.skip_confirmation!
 washer_profile2.save
 
 puts "Washer 2 created"
@@ -196,7 +194,6 @@ washer_profile3 = WasherProfile.new(
   phone_number: 114589273
   )
 washer_profile3.remote_dni_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer3.jpg"
-washer_profile3.skip_confirmation!
 washer_profile3.save
 
 puts "Washer 3 created"
