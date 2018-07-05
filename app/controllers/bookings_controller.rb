@@ -63,6 +63,7 @@ class BookingsController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/shared/car_book", locals: { booking: booking }) }
       }
     end
+    @markers = nil if @markers.empty?
   end
 
   def mark_as_washing

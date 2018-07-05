@@ -219,8 +219,6 @@ map.setStyle("map_style");
 
 const markers = JSON.parse(mapElement.dataset.markers);
 map.addMarkers(markers);
-console.log(markers);
-
 if (markers.length === 1) {
   map.setCenter(markers[0].lat, markers[0].lng);
   map.setZoom(18);
