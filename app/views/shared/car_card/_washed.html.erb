@@ -2,17 +2,16 @@
   <img src="<%= asset_url('cleancar.png') %>" alt="" class="icon-box-title">
   <hr>
   <h3> Woohoo! </h3>
-<br>
-<p>
-  Your car is washed.
-</p>
+  <br>
+  <p>
+    Your car is washed.
+  </p>
 
-
-<% 5.times do |i| %>
+  <div class="star-postition">
+  <% 5.times do |i| %>
   <i class="fas fa-star" id="<%= i %>"></i>
-<% end %>
+  <% end %>
+  </div>
 
-
-<%= link_to "OK", client_booking_path(booking.id), method: :put, class: "button-rounded button-position center" %>
+  <%= link_to "RATE", { controller: "client/bookings", action: "rate", rating: 1 }, id: 'btn-rating', class: "button-rounded button-position center" %>
 </div>
-
