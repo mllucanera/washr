@@ -1,24 +1,30 @@
-
 <div class="wrapper-big-card">
 
   <div>
+    <div class="button-opacity center" style="width: 350px;">
+    <p style="font-size: 30px; font-weight: bold; color: white; margin: auto;"> WELCOME!</p>
+    </div>
     <div style="border-radius: 5px; text-align: center; margin: 0 10%; padding:15px; width: -webkit-fill-available">
-      <p style="font-size: 18px;color: white">WASH CARS AND EARN MONEY!</p>
-      <img src="<%= asset_url('money.png') %>" alt="" class="icon-box-title" style= "text-align: center">
+      <p style="font-size: 25px;color: white; margin: auto;">WASH CARS</p>
+      <p style="font-size: 25px;color: white; margin: auto">& EARN MONEY!</p>
+      <br>
+      <img src="<%= asset_url('money.png') %>" alt="" class="icon-box-title" style= "text-align: center; width: 100px;">
+      <br>
+      <br>
       <hr>
-      <%= link_to "Start now!", new_washer_profile_path, class: "button-rounded"%>
+      <!-- agrandar el boton para los costados -->
+      <%= link_to "  Start now!  ", new_washer_profile_path, class: "button-rounded", style: 'font-size: 20px; '%>
     </div>
   </div>
 
   <div style="margin: 3% 10%;">
-
-    <i class="fas fa-users"></i> Be proud of being part of a comunity of washers recognized in the world.
-    <br>
-    <i class="fas fa-hand-holding-usd"></i> Feel rewarded. You will earn money and be payd on time, with lots of benefits.
-    <br>
-    <i class="fas fa-parachute-box"></i> Be supported. We will be with you at any time you need us.
-    <br>
-    <i class="fas fa-clock"></i> Feel free. You choose when to start and end your day: no fixed work schedules
+    <ul style="color: white; list-style-type:none;">
+      <!-- poner listing-style-type:none -->
+      <li><i class="fas fa-users" ></i> Be proud of being part of a comunity of washers recognized in the world.</li>
+      <li><i class="fas fa-hand-holding-usd"></i> Feel rewarded. You will earn money and be payd on time, with lots of benefits.</li>
+      <li><i class="fas fa-parachute-box"></i> Be supported. We will be with you at any time you need us.</li>
+      <li><i class="fas fa-clock"></i> Feel free. You choose when to start and end your day: no fixed work schedules</li>
+    </ul>
   </div>
 
   <div class="flex-container">
@@ -47,7 +53,6 @@
           <p>José, Buenos Aires</p>
         </div>
       </div>
-
     </div>
   </div>
 </div>

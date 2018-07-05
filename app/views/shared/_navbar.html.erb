@@ -3,11 +3,7 @@
   <% if current_user.photo_url.present? %>
   <%= cl_image_tag current_user.photo, secure: true, aspect_ratio: "1:1",  crop: :fill, width: 60, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
   <% else %>
-  <div data-toggle="dropdown">
-    <i class="far fa-user" style="font-size: 40px; color: white;"></i>
-  </div>
-
-<!--  -->
+    <i class="far fa-user" style="font-size: 40px; color: white;" data-toggle="dropdown"></i>
   <% end %>
 
   <ul class="dropdown-menu navbar-wagon-dropdown-menu" style="left: 30px;">
