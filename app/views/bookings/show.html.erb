@@ -30,7 +30,7 @@
         <hr>
         <p>
           DEADLINE TIME:
-          <%= (@booking.created_at + 1*60*60).strftime("%H:%m") %>
+          <%= (@booking.created_at + 2*60*60).strftime("%H:%m") %>
         </p>
       </div>
       <%= link_to "CONFIRM", { controller: "bookings", action: "mark_as_washing", id: @booking.id, remote: true}, data: { confirm: "Are you sure you want to pick this wash?"}, class: "button-rounded button-position center" %>
@@ -49,7 +49,7 @@
         <div class="line"></div>
         <p>
           DEADLINE TIME:
-          <%= (@booking.created_at + 1*60*60).strftime("%H:%m") %>
+          <%= (@booking.created_at + 2*60*60).strftime("%H:%m") %>
         </p>
       </div>
       <%= link_to "MARK AS COMPLETED",{ controller: "bookings", action: "mark_as_washed", id: @booking.id, remote: true}, data: { confirm: "Are you sure you completed the task?"}, class: "button-rounded button-position center" %>
