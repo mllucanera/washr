@@ -2,95 +2,212 @@ puts "Run seeding process!"
 
 puts "Starting seeding process with clients..."
 
-#Client
-C_EMAIL = %w(juanacer@gmail.com sofian@gmail.com ivanc@gmail.com nicoken@gmail.com)
-C_FIRST_NAME = %w(Juana Sofia Ivan Nicolas)
-C_LAST_NAME = %w(Cervetti Ninaus Cosentino Keneddy)
+#Clients
+client1 = User.new(
+  email: "luli@gmail.com",
+  password: "123456",
+  first_name: "Luli",
+  last_name:"Lucanera",
+  role: "client",
+  )
 
-#Washer
-W_EMAIL = %w(sebastianb@gmail.com saml@gmail.com)
-W_FIRST_NAME = %w(Sebastian Sam)
-W_LAST_NAME = %w(Buffo Levy)
+#client1.skip_confirmation!
+client1.save
+client1.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802861/WASHR/Clients/client1.jpg"
+#client1.skip_confirmation!
+client1.save
 
-#Car
-PLATE = ["ac 577 ng", "hkr 920", "jjv 695", "pei 066", "mks 719", "ipt 796", "ab 990 uw", "ije 265"]
-COLOR = %w(Black Platinium Silver Blue Black Silver Silver Black)
-NAME = ["My car", "Dad's", "Honey", "Mum's", "Javier's car", "Mariana's car", "Sweetie Peugeot", "The Kennedy"]
-MODEL = ["Prisma Joy", "Corolla", "307", "Spin Activ", "Journey", "Fit", "CRV", "307"]
-BRAND = %w(Chevrolet Toyota Peugeot Chevrolet Dodge Honda Honda Peugeot)
+puts "Client 1 created"
+
+client1_car1 = Car.new(
+  user_id: client1.id,
+  plate: "ac 577 ng",
+  color: "Black",
+  name: "My car",
+  model: "Prisma Joy",
+  brand: "Chevrolet",
+  photo: "*"
+  )
+client1_car1.save
+client1_car1.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802976/WASHR/Cars/car1.jpg"
+client1_car1.save
+
+puts "Car 1 for client 1 created"
+
+client1_car2 = Car.new(
+  user_id: client1.id,
+  plate: "hkr 920",
+  color: "Platinium",
+  name: "Dad's",
+  model: "Corolla",
+  brand: "Toyota",
+  photo: "*"
+  )
+client1_car2.save
+client1_car2.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802976/WASHR/Cars/car2.jpg"
+client1_car2.save
+
+puts "Car 2 for client 1 created"
+
+client1_car3 = Car.new(
+  user_id: client1.id,
+  plate: "jjv 695",
+  color: "Silver",
+  name: "Honey",
+  model: "307",
+  brand: "Peugeot",
+  photo: "*"
+  )
+client1_car3.save
+client1_car3.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802976/WASHR/Cars/car3.jpg"
+client1_car3.save
+
+puts "Car 3 for client 1 created"
+
+client2 = User.new(
+  email: "sam@gmail.com",
+  password: "123456",
+  first_name: "Sam",
+  last_name:"Levy",
+  role: "client",
+  )
+#client2.skip_confirmation!
+client2.save
+client2.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802861/WASHR/Clients/client2.jpg"
+#client2.skip_confirmation!
+client2.save
+
+puts "Client 2 created"
+
+client2_car1 = Car.new(
+  user_id: client2.id,
+  plate: "pei 066",
+  color: "Blue",
+  name: "Mum's",
+  model: "Spin",
+  brand: "Chevrolet",
+  photo: "*"
+  )
+client2_car1.save
+client2_car1.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802976/WASHR/Cars/car4.jpg"
+client2_car1.save
+
+puts "Car 1 for client 2 created"
+
+client2_car2 = Car.new(
+  user_id: client2.id,
+  plate: "mks 719",
+  color: "Black",
+  name: "Javier's car",
+  model: "Journey",
+  brand: "Dodge",
+  photo: "*"
+  )
+client2_car2.save
+client2_car2.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802976/WASHR/Cars/car5.jpg"
+client2_car2.save
+
+puts "Car 2 for client 2 created"
+
+client3 = User.new(
+  email: "justo@gmail.com",
+  password: "123456",
+  first_name: "Justo",
+  last_name:"Simian",
+  role: "client",
+  )
+#client3.skip_confirmation!
+client3.save
+client3.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802861/WASHR/Clients/client3.jpg"
+#client3.skip_confirmation!
+client3.save
+
+puts "Client 3 created"
 
 
-t = 0
-i = 0
-c = 0
+puts "Starting seeding process with washers..."
+#Washers
 
-# Client data
-4.times do
-  client_data = {
-    email: C_EMAIL[t],
-    password: '123456',
-    first_name: C_FIRST_NAME[t],
-    last_name: C_LAST_NAME[t],
-    role: "client",
-    photo: "*"
-  }
-  # Create client
-  client = User.new(client_data)
-  client.save
-  client.remote_photo_url = "https://res.cloudinary.com/logicisaliar/image/upload/a_0/v1530547670/user#{t + 1}.jpg"
+washer1 = User.new(
+  email: "jash@gmail.com",
+  password: "123456",
+  first_name: "Jash",
+  last_name:"Shah",
+  role: "washer",
+  )
+#washer1.skip_confirmation!
+washer1.save
+washer1.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer1.jpg"
+#washer1.skip_confirmation!
+washer1.save
 
-  client.save
-  t += 1
+washer_profile1 = WasherProfile.new(
+  user_id: washer1.id,
+  dni_id: 35458796,
+  phone_number: 114589273
+  )
+washer_profile1.remote_dni_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer1.jpg"
+#washer_profile1.skip_confirmation!
+washer_profile1.save
 
-end
+puts "Washer 1 created"
 
-8.times do
-    #Car data
-    car_data = {
-      user: User.where(role: :client)[c/2],
-      plate: PLATE[c],
-      color: COLOR[c],
-      name: NAME[c],
-      model: MODEL[c],
-      brand: BRAND[c],
-      photo: "*"
-    }
-    car = Car.new(car_data)
-    car.save
+washer2 = User.new(
+  email: "seba@gmail.com",
+  password: "123456",
+  first_name: "Seba",
+  last_name:"Buffo Sempe",
+  role: "washer",
+  )
+#washer2.skip_confirmation!
+washer2.save
+washer2.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer2.jpg"
+#washer2.skip_confirmation!
+washer2.save
 
-    car.remote_photo_url = "https://res.cloudinary.com/jotisempe/image/upload/a_0/v1530725199/cars/car#{c+1}.jpg"
-    car.save
-    puts "Car #{c+1} created"
-    c += 1
-  end
+washer_profile2 = WasherProfile.new(
+  user_id: washer2.id,
+  dni_id: 35458796,
+  phone_number: 114589273
+  )
+washer_profile2.remote_dni_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer2.jpg"
+#washer_profile2.skip_confirmation!
+washer_profile2.save
 
-  puts "Starting seeding process with washers..."
-  t = 0
+puts "Washer 2 created"
 
-  2.times do
-  # Washer data
-  washer_data = {
-    email: W_EMAIL[t],
-    password: '123456',
-    first_name: W_FIRST_NAME[t],
-    last_name: W_LAST_NAME[t],
-    role: "washer",
-    photo: "*"
-  }
-  # Create client
-  washer = User.new(washer_data)
-  washer.save
-  washer.remote_photo_url = "https://res.cloudinary.com/logicisaliar/image/upload/a_0/v1530545192/washer#{t + 1}.jpg"
-  washer.save
-  t += 1
-end
+washer3 = User.new(
+  email: "joti@gmail.com",
+  password: "123456",
+  first_name: "Josefina",
+  last_name:"Sempe",
+  role: "washer",
+  )
+#washer3.skip_confirmation!
+washer3.save
+washer3.remote_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer3.jpg"
+#washer3.skip_confirmation!
+washer3.save
 
-puts "Creating bookings"
 
-first_booking = Booking.create!(address: "Av. Libertador 4673", car: Car.first, status: 3, user_id: 6)
-second_booking = Booking.create!(address: "Ecuador 1458", car: Car.fifth, status: 3)
-third_booking = Booking.create!(address: "San Martin de Tours 3307", car: Car.third, status: 0)
+washer_profile3 = WasherProfile.new(
+  user_id: washer3.id,
+  dni_id: 35458796,
+  phone_number: 114589273
+  )
+washer_profile3.remote_dni_photo_url = "http://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer3.jpg"
+#washer_profile3.skip_confirmation!
+washer_profile3.save
+
+puts "Washer 3 created"
 
 puts "Finished seeding process. Seeds Created"
 
-User.create!(email: "samulevy@gmail.com", password: "123456")
+=begin
+CAR = [6 7 8]
+PLATE = ["ipt 796", "ab 990 uw", "ije 265"]
+COLOR = %w(Silver Silver Black)
+NAME = ["Mariana's car", "Sweetie Peugeot", "The Kennedy"]
+MODEL = ["Fit", "CRV", "307"]
+BRAND = %w(Honda Honda Peugeot)
+=end
