@@ -124,8 +124,23 @@ client3.save
 
 puts "Client 3 created"
 
+client4 = User.new(
+  email: "joti@gmail.com",
+  password: "123456",
+  first_name: "Joti",
+  last_name:"Sempe",
+  role: "client",
+  )
+client4.skip_confirmation!
+client4.save
+client4.remote_photo_url = "https://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer3.jpg"
+client4.skip_confirmation!
+client4.save
+
+puts "Client 4 created"
 
 puts "Starting seeding process with washers..."
+
 #Washers
 
 washer1 = User.new(
@@ -173,30 +188,6 @@ washer_profile2.remote_dni_photo_url = "https://res.cloudinary.com/dz9qskljz/ima
 washer_profile2.save
 
 puts "Washer 2 created"
-
-washer3 = User.new(
-  email: "joti@gmail.com",
-  password: "123456",
-  first_name: "Josefina",
-  last_name:"Sempe",
-  role: "washer",
-  )
-washer3.skip_confirmation!
-washer3.save
-washer3.remote_photo_url = "https://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer3.jpg"
-washer3.skip_confirmation!
-washer3.save
-
-
-washer_profile3 = WasherProfile.new(
-  user_id: washer3.id,
-  dni_id: 35458796,
-  phone_number: 114589273
-  )
-washer_profile3.remote_dni_photo_url = "https://res.cloudinary.com/dz9qskljz/image/upload/v1530802946/WASHR/Washers/washer3.jpg"
-washer_profile3.save
-
-puts "Washer 3 created"
 
 puts "Finished seeding process. Seeds Created"
 
